@@ -1,0 +1,81 @@
+:root {
+  --primary-color: #105B37;
+  --yellow-green:#FFFBB6;
+  --dark-green-color: #005324;
+  --darker-green-color: #014423;
+  --white-color: #ffffff;
+  --orange-color: #FFB907;
+  --yellow-color: #F7DB41;
+  --black-color: #000000;
+  --light-gray-color: #F3F4F3;
+  --font-size-base: 16px;
+  --font-name: 'Oswald', sans-serif;
+  --font-inter: 'Inter', sans-serif;
+  --font-roboto: 'Roboto', sans-serif;
+  --font-ooohbaby: 'Oooh Baby', sans-serif;
+}
+
+main{
+  position: relative;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  caret-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+button{
+  font-family: var(--font-name);
+}
+
+input:focus {
+  outline: none;
+}
+
+body {
+  font-family: var(--font-name);
+  overflow-x: hidden;
+  background-color: var(--light-gray-color);
+}
+
+header,
+footer,
+section {
+  justify-content: center;
+}
+
+ul {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 0px;
+  margin: 0px;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-black);
+  cursor: pointer;
+}
+
+*:not(input):not(textarea) {
+  caret-color: transparent;
+}
+
+p{
+  font-family: var(--font-roboto);
+  line-height: 1.5;
+}

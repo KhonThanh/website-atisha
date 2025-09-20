@@ -1,18 +1,13 @@
 :root {
-  --primary-color: #105B37;
-  --yellow-green:#FFFBB6;
-  --dark-green-color: #005324;
-  --darker-green-color: #014423;
+  --primary-color: #9ABB0C;
+  --secondary-color: #EA445A;
+  --orange-color: #F17C2C;
   --white-color: #ffffff;
-  --orange-color: #FFB907;
-  --yellow-color: #F7DB41;
-  --black-color: #000000;
-  --light-gray-color: #F3F4F3;
+  --black-color: #3c3c3c;
+  --gray-color : #F6F6F6; 
   --font-size-base: 16px;
-  --font-name: 'Oswald', sans-serif;
-  --font-inter: 'Inter', sans-serif;
-  --font-roboto: 'Roboto', sans-serif;
-  --font-ooohbaby: 'Oooh Baby', sans-serif;
+  --font-roboto: 'Roboto', Arial, sans-serif;
+  --font-dancing: 'Dancing Script', cursive;
 }
 
 main{
@@ -27,12 +22,18 @@ main{
   caret-color: transparent;
 }
 
+image{
+  width: 100%;
+  height: auto;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 button{
   font-family: var(--font-name);
+  cursor: pointer;
 }
 
 input:focus {
@@ -40,19 +41,14 @@ input:focus {
 }
 
 body {
-  font-family: var(--font-name);
+  font-family: var(--font-roboto);
   overflow-x: hidden;
-  background-color: var(--light-gray-color);
 }
 
 header,
 footer,
 section {
   justify-content: center;
-}
-
-ul {
-  list-style: none;
 }
 
 h1,
@@ -63,11 +59,13 @@ h5,
 h6 {
   padding: 0px;
   margin: 0px;
+  font-weight: bold;
+  color: var(--black-color);
 }
 
 a {
   text-decoration: none;
-  color: var(--color-black);
+  color: var(--black-color);
   cursor: pointer;
 }
 
@@ -76,6 +74,5 @@ a {
 }
 
 p{
-  font-family: var(--font-roboto);
   line-height: 1.5;
 }

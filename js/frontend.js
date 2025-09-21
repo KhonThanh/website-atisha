@@ -166,3 +166,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   sections.forEach(sec => observer.observe(sec));
 });
+
+// js tab product
+document.addEventListener("DOMContentLoaded", function () {
+  const tabs = document.querySelectorAll(".product-tab__button");
+
+  if (!tabs || tabs.length === 0) return;
+
+  tabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+      tabs.forEach(btn => btn.classList.remove("active"));
+      tab.classList.add("active");
+    });
+  });
+});

@@ -35,6 +35,34 @@
     }
 }
 
+@media screen and (max-width: 900px) {
+    .product-container {
+        justify-content: flex-start;
+        overflow-x: auto;
+        /* scroll-snap-type: x mandatory; */
+        padding: 10px 0px;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .product-item {
+        flex: 0 0 200px;
+        scroll-snap-align: start;
+    }
+
+    .product-item:first-child {
+        margin-left: 10px;
+    }
+
+    .product-item:last-child {
+        margin-right: 10px;
+    }
+
+    .product-container{
+        gap: 15px;
+    }
+
+}
+
 @media screen and (max-width: 835px) {
     .search-box {
         min-width: unset;
@@ -42,6 +70,15 @@
 
     .advise-contact {
         flex-direction: column;
+        align-items: center;
+    }
+
+    .advise-image {
+        border-right: none;
+    }
+
+    .advise-intro {
+        width: 100%;
     }
 
     .news__image img,
@@ -52,6 +89,7 @@
     .news__small .news__image img {
         aspect-ratio: 9 / 16;
     }
+
 }
 
 @media screen and (max-width: 768px) {
@@ -63,12 +101,27 @@
         aspect-ratio: 3 / 4;
         max-height: 150px;
         height: 100%;
-        width: auto;
+        width: 100%;
     }
 
     .news__small .news__image {
         flex: 0 0 25%;
         height: 100%;
+    }
+
+    .knowledge-item {
+        width: calc(100% / 2 - 15px) !important;
+    }
+
+    .why-choose {
+        flex-direction: column;
+    }
+
+    .why-choose__image img {
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 10px;
     }
 }
 
@@ -88,10 +141,32 @@
     .advise-intro__top {
         flex-direction: column;
     }
+
+    .product-item {
+        flex: 0 0 180px;
+        scroll-snap-align: start;
+    }
 }
 
 @media screen and (max-width: 480px) {
     .advise-intro__bottom {
         flex-direction: column;
+    }
+
+    .news__small {
+        flex-direction: column;
+    }
+
+    .news__small .news__image img {
+        aspect-ratio: 4 / 2;
+        max-height: unset;
+    }
+
+    .product-quality {
+        gap: 15px;
+    }
+
+    .product-quality__item {
+        flex-grow: 1;
     }
 }

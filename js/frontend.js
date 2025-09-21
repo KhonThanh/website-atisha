@@ -78,3 +78,58 @@ $(document).on('init reInit afterChange', '.slick-slider', function () {
 });
 
 // js slide
+$(document).ready(function(){
+  let $slider = $('.slide-container');
+
+  if ($slider.length) {
+    let $slides = $slider.children('div');
+    let slideCount = $slides.length;
+
+    if (slideCount < 3) {
+      for (let i = slideCount; i < 3; i++) {
+        $slider.append($slides.eq(i % slideCount).clone());
+      }
+    }
+
+    $slider.slick({
+      infinite: true,
+      autoplay: true,
+      dots: true,
+      arrows: false,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      fade: false,
+      appendDots: $('.custom-dots')
+    });
+  }
+});
+
+// js phần intro
+$(document).ready(function(){
+  let $introSlide = $('.intro-slide');
+  let itemCount = $introSlide.children().length;
+
+  if(itemCount < 6){
+    let clonesNeeded = 6 - itemCount;
+    for(let i = 0; i < clonesNeeded; i++){
+      $introSlide.append($introSlide.children().eq(i).clone());
+    }
+  }
+
+  if(!$introSlide.hasClass('slick-initialized')) {
+    $introSlide.slick({
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 0,
+      speed: 4000,
+      cssEase: 'linear',
+      arrows: false,
+      dots: false,
+      infinite: true,
+      pauseOnHover: false,
+      pauseOnFocus: false,
+      variableWidth: true
+    });
+  }
+});

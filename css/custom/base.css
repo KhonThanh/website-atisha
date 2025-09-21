@@ -4,13 +4,13 @@
   --orange-color: #F17C2C;
   --white-color: #ffffff;
   --black-color: #3c3c3c;
-  --gray-color : #F6F6F6; 
+  --gray-color: #F6F6F6;
   --font-size-base: 16px;
   --font-roboto: 'Roboto', Arial, sans-serif;
   --font-dancing: 'Dancing Script', cursive;
 }
 
-main{
+main {
   position: relative;
 }
 
@@ -22,7 +22,7 @@ main{
   caret-color: transparent;
 }
 
-image{
+img {
   width: 100%;
   height: auto;
 }
@@ -31,7 +31,7 @@ html {
   scroll-behavior: smooth;
 }
 
-button{
+button {
   font-family: var(--font-name);
   cursor: pointer;
 }
@@ -41,14 +41,28 @@ input:focus {
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--white-color);
   font-family: var(--font-roboto);
   overflow-x: hidden;
+  position: relative;
 }
 
 header,
 footer,
 section {
   justify-content: center;
+}
+
+header {
+  z-index: 1;
+  position: sticky;
+  top: 0px;
+  left: 0px;
+  background-color: var(--white-color);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  padding-bottom: 10px;
 }
 
 h1,
@@ -61,6 +75,7 @@ h6 {
   margin: 0px;
   font-weight: bold;
   color: var(--black-color);
+  text-transform: uppercase;
 }
 
 a {
@@ -73,6 +88,6 @@ a {
   caret-color: transparent;
 }
 
-p{
+p {
   line-height: 1.5;
 }

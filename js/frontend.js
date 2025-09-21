@@ -133,3 +133,36 @@ $(document).ready(function(){
     });
   }
 });
+
+// js hiệu ứng 
+document.addEventListener("DOMContentLoaded", () => {
+  const sections = document.querySelectorAll("section, footer");
+  if (!sections.length) return;
+
+  sections.forEach(sec => {
+    // Đảm bảo ẩn tất cả section và footer, dù nằm trong div nào
+    sec.classList.add("hidden-section");
+  });
+
+  let revealIndex = 0;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+
+        el.style.transitionDelay = `${revealIndex * 20}ms`;
+        revealIndex++;
+
+        el.classList.add("show-up");
+
+        observer.unobserve(el);
+      }
+    });
+  }, {
+    threshold: 0.08,              // chỉ cần xuất hiện 10% là hiện
+    rootMargin: "0px 0px -10% 0px"
+  });
+
+  sections.forEach(sec => observer.observe(sec));
+});

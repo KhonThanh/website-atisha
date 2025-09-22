@@ -62,39 +62,7 @@
             </div>
         </section>
         <section class="container-f flex flex-col bg-gray advise-container ">
-            <div class="container-xs bg-white flex advise-contact">
-                <div class="advise-image">
-                    <p>Tư vấn sức khỏe</p>
-                </div>
-                <div class="flex flex-col advise-intro">
-                    <div class="flex advise-intro__top">
-                        <div class=" flex center-ver input-box">
-                            <span class="input-icon">
-                                <img src="./img/icon/User.webp" alt="user">
-                            </span>
-                            <input type="text" placeholder="Nhập tên của bạn">
-                        </div>
-                        <div class=" flex center-ver input-box">
-                            <span class="input-icon">
-                                <img src="./img/icon/Phone.webp" alt="user">
-                            </span>
-                            <input type="text" placeholder="Nhập số điện thoại">
-                        </div>
-                    </div>
-                    <div class="flex  advise-intro__bottom">
-                        <div class=" flex center-ver input-box">
-                            <span class="input-icon">
-                                <img src="./img/icon/Phone.webp" alt="user">
-                            </span>
-                            <input type="text" placeholder="Nhập số điện thoại">
-                        </div>
-                        <button class="flex btn-register">
-                            <img src="./img/icon/Phone-white.svg" alt="">
-                            Đăng ký
-                        </button>
-                    </div>
-                </div>
-            </div>
+            <div class="container-xs bg-white flex advise-contact" data-include="./component/healthconsulting.html"></div>
             <div class="container-xs flex why-choose ">
                 <div class="why-choose__image">
                     <img src="./img/image-new/image-why.svg" alt="">
@@ -260,38 +228,84 @@
                 </a>
             </div>
         </section>
-        <section class="container-f bg-gray">
-            <div class="container-l"></div>
-        </section>
-        <section class="container-f bg-white">
-            <div class="container-l flex flex-col knowledge-container">
-                <div class="container-xs flex flex-col center-ver">
-                    <h2>Kiên thức & lifestyle</h2>
-                    <img src="./img/icon/Vector.webp" alt="">
+        <section class="container-f bg-gray flex flex-col feedback-container">
+            <div class="container-l flex flex-col feedback-title product-title center-ver">
+                <p>Khách hàng</p>
+                <h2>Nói về sản phẩm từ jan's atisha</h2>
+                <img src="./img/icon/Vector.webp" alt="">
+            </div>
+            <div class="container-l feedback-item__container">
+                <div>
+                    <div class="flex feedback-item">
+                        <div class="feedback-image flex flex-col">
+                            <img src="./img/image-new/Frame 404.webp" alt="">
+                            <b>Chị Trần Thị Lan</b>
+                            <i>Khách hàng gia đình của Jan’s Atisha</i>
+                        </div>
+                        <div class="feedback-content bg-primary flex flex-col">
+                            <img src="./img/icon/quote-left.svg" alt="">
+                            <p>Gia đình tôi đã bắt đầu uống Kombucha của Atisha mỗi ngày sau các bữa ăn thay cho nước
+                                ngọt.
+                                Cơ thể nhẹ nhàng hơn, tiêu hóa tốt hơn và đặc biệt là hương vị rất tự nhiên, không hề
+                                gắt
+                                hay ngọt gắt. Tôi cảm thấy mình đang sống chậm lại và lắng nghe cơ thể nhiều hơn.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="knowledge-content center-hor flex">
-                    <a href="#" class="knowledge-item flex flex-col">
-                        <img src="./img/image-new/image 49.webp" alt="">
-                        <h3>Quy trình sản xuất Mật chuối</h3>
-                        <p>Đây là quy trình sản xuất Mật chuối từ trang trại đến xưởng của Jan’slenmen.</p>
-                    </a>
-                    <a href="#" class="knowledge-item flex flex-col">
-                        <img src="./img/image-new/image 49.webp" alt="">
-                        <h3>Quy trình sản xuất Mật chuối</h3>
-                        <p>Đây là quy trình sản xuất Mật chuối từ trang trại đến xưởng của Jan’slenmen.</p>
-                    </a>
-                    <a href="#" class="knowledge-item flex flex-col">
-                        <img src="./img/image-new/image 49.webp" alt="">
-                        <h3>Quy trình sản xuất Mật chuối</h3>
-                        <p>Đây là quy trình sản xuất Mật chuối từ trang trại đến xưởng của Jan’slenmen.</p>
-                    </a> <a href="#" class="knowledge-item flex flex-col">
-                        <img src="./img/image-new/image 49.webp" alt="">
-                        <h3>Quy trình sản xuất Mật chuối</h3>
-                        <p>Đây là quy trình sản xuất Mật chuối từ trang trại đến xưởng của Jan’slenmen.</p>
-                    </a>
+                <div>
+                    <div class="flex feedback-item">
+                        <div class="feedback-image flex flex-col">
+                            <img src="./img/image-new/Frame 404.webp" alt="">
+                            <b>Chị Trần Thị Lan</b>
+                            <i>Khách hàng gia đình của Jan’s Atisha</i>
+                        </div>
+                        <div class="feedback-content bg-primary flex flex-col">
+                            <img src="./img/icon/quote-left.svg" alt="">
+                            <p>Gia đình tôi đã bắt đầu uống Kombucha của Atisha mỗi ngày sau các bữa ăn thay cho nước
+                                ngọt.
+                                Cơ thể nhẹ nhàng hơn, tiêu hóa tốt hơn và đặc biệt là hương vị rất tự nhiên, không hề
+                                gắt
+                                hay ngọt gắt. Tôi cảm thấy mình đang sống chậm lại và lắng nghe cơ thể nhiều hơn.</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex feedback-item">
+                        <div class="feedback-image flex flex-col">
+                            <img src="./img/image-new/Frame 404.webp" alt="">
+                            <b>Chị Trần Thị Lan</b>
+                            <i>Khách hàng gia đình của Jan’s Atisha</i>
+                        </div>
+                        <div class="feedback-content bg-primary flex flex-col">
+                            <img src="./img/icon/quote-left.svg" alt="">
+                            <p>Gia đình tôi đã bắt đầu uống Kombucha của Atisha mỗi ngày sau các bữa ăn thay cho nước
+                                ngọt.
+                                Cơ thể nhẹ nhàng hơn, tiêu hóa tốt hơn và đặc biệt là hương vị rất tự nhiên, không hề
+                                gắt
+                                hay ngọt gắt. Tôi cảm thấy mình đang sống chậm lại và lắng nghe cơ thể nhiều hơn.</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex feedback-item">
+                        <div class="feedback-image flex flex-col">
+                            <img src="./img/image-new/Frame 404.webp" alt="">
+                            <b>Chị Trần Thị Lan</b>
+                            <i>Khách hàng gia đình của Jan’s Atisha</i>
+                        </div>
+                        <div class="feedback-content bg-primary flex flex-col">
+                            <img src="./img/icon/quote-left.svg" alt="">
+                            <p>Gia đình tôi đã bắt đầu uống Kombucha của Atisha mỗi ngày sau các bữa ăn thay cho nước
+                                ngọt.
+                                Cơ thể nhẹ nhàng hơn, tiêu hóa tốt hơn và đặc biệt là hương vị rất tự nhiên, không hề
+                                gắt
+                                hay ngọt gắt. Tôi cảm thấy mình đang sống chậm lại và lắng nghe cơ thể nhiều hơn.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
+        <section class="container-f bg-white" data-include="./component/knowledge.html"></section>
         <section class="bg-gray container-f flex flex-col news-container">
             <div class="container-xs flex flex-col center-ver">
                 <h2>tin tức</h2>

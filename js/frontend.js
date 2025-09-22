@@ -78,7 +78,7 @@ $(document).on('init reInit afterChange', '.slick-slider', function () {
 });
 
 // js slide
-$(document).ready(function(){
+$(document).ready(function () {
   let $slider = $('.slide-container');
 
   if ($slider.length) {
@@ -104,19 +104,34 @@ $(document).ready(function(){
   }
 });
 
+// js feedback
+$(document).ready(function () {
+  let $slider = $('.feedback-item__container');
+
+  $slider.slick({
+    infinite: true,
+    autoplay: true,
+    dots: false,
+    arrows: false,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    fade: false,
+  });
+});
+
 // js phần intro
-$(document).ready(function(){
+$(document).ready(function () {
   let $introSlide = $('.intro-slide');
   let itemCount = $introSlide.children().length;
 
-  if(itemCount < 6){
+  if (itemCount < 6) {
     let clonesNeeded = 6 - itemCount;
-    for(let i = 0; i < clonesNeeded; i++){
+    for (let i = 0; i < clonesNeeded; i++) {
       $introSlide.append($introSlide.children().eq(i).clone());
     }
   }
 
-  if(!$introSlide.hasClass('slick-initialized')) {
+  if (!$introSlide.hasClass('slick-initialized')) {
     $introSlide.slick({
       slidesToShow: 3,
       slidesToScroll: 1,
@@ -159,7 +174,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }, {
-    threshold: 0.08,             
+    threshold: 0.08,
     rootMargin: "0px 0px -10% 0px"
   });
 
@@ -182,32 +197,32 @@ document.addEventListener("DOMContentLoaded", function () {
 
 //ja menu
 document.addEventListener("DOMContentLoaded", function () {
-    const menuRoot = document.querySelector(".menu-root");
+  const menuRoot = document.querySelector(".menu-root");
 
-    if (menuRoot) {
-        menuRoot.addEventListener("click", function (e) {
-            const link = e.target.closest("a");
-            if (!link) return;
+  if (menuRoot) {
+    menuRoot.addEventListener("click", function (e) {
+      const link = e.target.closest("a");
+      if (!link) return;
 
-            const menuItem = link.closest(".menu-item");
-            if (!menuItem) return;
+      const menuItem = link.closest(".menu-item");
+      if (!menuItem) return;
 
-            const submenu = menuItem.querySelector(".submenu");
+      const submenu = menuItem.querySelector(".submenu");
 
-            if (submenu) {
-                if (!submenu.classList.contains("active")) {
-                    e.preventDefault();
-                    menuRoot.querySelectorAll(".submenu.active").forEach(sm => {
-                        if (sm !== submenu) sm.classList.remove("active");
-                    });
+      if (submenu) {
+        if (!submenu.classList.contains("active")) {
+          e.preventDefault();
+          menuRoot.querySelectorAll(".submenu.active").forEach(sm => {
+            if (sm !== submenu) sm.classList.remove("active");
+          });
 
-                    submenu.classList.add("active");
-                } else {
-                    submenu.classList.remove("active");
-                }
-            }
-        });
-    }
+          submenu.classList.add("active");
+        } else {
+          submenu.classList.remove("active");
+        }
+      }
+    });
+  }
 });
 
 //js menu table
@@ -216,7 +231,7 @@ const menuTable = document.querySelector('.menu-list__table');
 
 if (menuButtonTable && menuTable) {
   menuButtonTable.addEventListener('click', (e) => {
-    e.stopPropagation(); 
+    e.stopPropagation();
     menuTable.classList.toggle('active');
   });
 
@@ -267,5 +282,75 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
     });
+  }
+});
+
+// js tạo mục lục
+document.addEventListener("DOMContentLoaded", () => {
+  const tocBody = document.querySelector(".table-heading__body");
+  if (!tocBody) return;
+
+  // Xóa nội dung cũ trong .table-heading__body
+  tocBody.innerHTML = "<ul></ul>";
+  const tocList = tocBody.querySelector("ul");
+
+  // Chỉ lấy headings bên trong .product-page__intro
+  const contentArea = document.querySelector(".product-page__intro");
+  if (!contentArea) return;
+
+  const headings = contentArea.querySelectorAll("h1, h2, h3");
+
+  headings.forEach((heading, index) => {
+    // Nếu chưa có id thì gán
+    if (!heading.id) {
+      let slug = heading.textContent
+        .toLowerCase()
+        .normalize("NFD")            // tách dấu tiếng Việt
+        .replace(/[\u0300-\u036f]/g, "") // bỏ dấu
+        .replace(/[^a-z0-9]+/g, "-") // thay space/ký tự đặc biệt bằng -
+        .replace(/^-+|-+$/g, "");    // xóa - thừa đầu/cuối
+      heading.id = slug || `heading-${index + 1}`;
+    }
+
+    // Tạo list item
+    const li = document.createElement("li");
+    li.classList.add(`toc-${heading.tagName.toLowerCase()}`);
+    li.innerHTML = `<a href="#${heading.id}">${heading.textContent}</a>`;
+    tocList.appendChild(li);
+  });
+
+  // Toggle mở/đóng body khi click vào top
+  const tocTop = document.querySelector(".table-heading__top");
+  if (tocTop) {
+    tocTop.addEventListener("click", () => {
+      tocTop.classList.toggle("active");
+      tocBody.classList.toggle("open");
+    });
+  }
+});
+
+//js review 
+function openReviewPopup() {
+  const popup = document.getElementById("popupReview");
+  if (popup) {
+    popup.classList.add("active");
+  }
+}
+
+function closePopup() {
+  const popup = document.getElementById("popupReview");
+  if (popup) {
+    popup.classList.remove("active");
+  }
+}
+
+// Bấm ra ngoài (overlay) thì đóng
+document.addEventListener("click", (e) => {
+  const popup = document.getElementById("popupReview");
+  if (popup && popup.classList.contains("active")) {
+    const box = popup.querySelector(".popup-box");
+    if (!box.contains(e.target) && !e.target.closest(".btn-submit-review")) {
+      popup.classList.remove("active");
+    }
   }
 });

@@ -81,6 +81,62 @@
     padding: 10px;
 }
 
+.menu-list__table {
+    padding: 20px 0px;
+}
+
+.submenu>div>a,
+.menu-item>a {
+    text-align: right;
+    padding: 10px 0px;
+    margin-right: 20px;
+}
+
+.menu-item>a {
+    color: var(--white-color);
+}
+
+.menu-item>a::after {
+    content: "";
+    display: inline-block;
+    aspect-ratio: 1 / 1;
+    width: 10px;
+    height: auto;
+    margin-left: 4px;
+    background-image: url(../../img/icon/chevron-down-white.svg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.submenu {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+}
+
+.submenu.active {
+    max-height: 500px;
+    opacity: 1;
+}
+
+.menu-list__table {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+}
+
+.menu-list__table.active {
+    max-height: 2000px;
+    opacity: 1;
+}
+
+.submenu div {
+    justify-content: right;
+}
+
 .drop-down {
     position: relative;
 }
@@ -181,6 +237,59 @@
 
 .custom-dots .slick-active button {
     background: var(--primary-color);
+}
+
+/* css menu mobile */
+.menu-mobile__container {
+    position: fixed;
+    bottom: 0;
+    z-index: 2;
+    gap: 5px;
+    width: 100vw;
+    display: none;
+}
+
+.menu-mobile__item img {
+    max-height: 19px;
+    width: 100%;
+    height: auto;
+}
+
+.menu-mobile__item {
+    padding: 10px;
+    gap: 5px;
+}
+
+.menu-mobile__item p {
+    font-size: calc(var(--font-size-base) / 2);
+    font-weight: bold;
+    color: var(--black-color);
+    opacity: 0.4;
+}
+
+.menu-list__mobile {
+    position: absolute;
+    right: 0;
+    bottom: 100%;
+    width: 100vw;
+    padding: 10px 0;
+    background: #fff;
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-10px);
+    overflow: hidden;
+    transition: max-height 0.4s ease,
+        opacity 0.3s ease,
+        transform 0.3s ease;
+    z-index: 999;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.menu-list__mobile.active {
+    max-height: 80vh;
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* css intro */

@@ -140,7 +140,6 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!sections.length) return;
 
   sections.forEach(sec => {
-    // Đảm bảo ẩn tất cả section và footer, dù nằm trong div nào
     sec.classList.add("hidden-section");
   });
 
@@ -160,7 +159,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }, {
-    threshold: 0.08,              // chỉ cần xuất hiện 10% là hiện
+    threshold: 0.08,             
     rootMargin: "0px 0px -10% 0px"
   });
 
@@ -179,4 +178,94 @@ document.addEventListener("DOMContentLoaded", function () {
       tab.classList.add("active");
     });
   });
+});
+
+//ja menu
+document.addEventListener("DOMContentLoaded", function () {
+    const menuRoot = document.querySelector(".menu-root");
+
+    if (menuRoot) {
+        menuRoot.addEventListener("click", function (e) {
+            const link = e.target.closest("a");
+            if (!link) return;
+
+            const menuItem = link.closest(".menu-item");
+            if (!menuItem) return;
+
+            const submenu = menuItem.querySelector(".submenu");
+
+            if (submenu) {
+                if (!submenu.classList.contains("active")) {
+                    e.preventDefault();
+                    menuRoot.querySelectorAll(".submenu.active").forEach(sm => {
+                        if (sm !== submenu) sm.classList.remove("active");
+                    });
+
+                    submenu.classList.add("active");
+                } else {
+                    submenu.classList.remove("active");
+                }
+            }
+        });
+    }
+});
+
+//js menu table
+const menuButtonTable = document.querySelector('.menu-container__bar');
+const menuTable = document.querySelector('.menu-list__table');
+
+if (menuButtonTable && menuTable) {
+  menuButtonTable.addEventListener('click', (e) => {
+    e.stopPropagation(); 
+    menuTable.classList.toggle('active');
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!menuTable.contains(e.target) && !menuButtonTable.contains(e.target)) {
+      menuTable.classList.remove('active');
+    }
+  });
+}
+
+// Menu mobile
+document.addEventListener("DOMContentLoaded", () => {
+  const menuButtonMobile = document.getElementById('menuMobileButton');
+  const menuMobileList = document.querySelector('.menu-list__mobile');
+
+  if (menuButtonMobile && menuMobileList) {
+    // Toggle toàn bộ menu mobile
+    menuButtonMobile.addEventListener('click', (e) => {
+      e.stopPropagation();
+      menuMobileList.classList.toggle('active');
+    });
+
+    // Click ra ngoài thì đóng
+    document.addEventListener('click', (e) => {
+      if (!menuMobileList.contains(e.target) && !menuButtonMobile.contains(e.target)) {
+        menuMobileList.classList.remove('active');
+        // đóng hết submenu khi đóng menu mobile
+        menuMobileList.querySelectorAll('.submenu').forEach(sub => sub.classList.remove('active'));
+      }
+    });
+
+    // Toggle submenu trong menu mobile
+    const menuItems = menuMobileList.querySelectorAll('.menu-item > a');
+    menuItems.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault(); // không cho nhảy link
+        const parentItem = link.parentElement;
+        const submenu = parentItem.querySelector('.submenu');
+
+        if (submenu) {
+          // Đóng hết submenu khác
+          menuMobileList.querySelectorAll('.submenu.active').forEach(sub => {
+            if (sub !== submenu) sub.classList.remove('active');
+          });
+
+          // Toggle submenu hiện tại
+          submenu.classList.toggle('active');
+        }
+      });
+    });
+  }
 });

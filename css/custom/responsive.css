@@ -146,6 +146,11 @@
         flex: 0 0 180px;
         scroll-snap-align: start;
     }
+
+    .menu-mobile__container{
+        display: flex;
+    }
+
 }
 
 @media screen and (max-width: 480px) {

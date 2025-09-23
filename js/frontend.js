@@ -344,7 +344,6 @@ function closePopup() {
   }
 }
 
-// Bấm ra ngoài (overlay) thì đóng
 document.addEventListener("click", (e) => {
   const popup = document.getElementById("popupReview");
   if (popup && popup.classList.contains("active")) {
@@ -353,4 +352,89 @@ document.addEventListener("click", (e) => {
       popup.classList.remove("active");
     }
   }
+});
+
+//js mục lục bài viết
+document.addEventListener("DOMContentLoaded", function () {
+    const blogContent = document.querySelector(".blog-content");
+    if (!blogContent) return; 
+
+    function toSlug(str) {
+        return str.normalize("NFD") 
+            .replace(/[\u0300-\u036f]/g, "") 
+            .replace(/đ/g, "d").replace(/Đ/g, "D") 
+            .replace(/\s+/g, "-") 
+            .toLowerCase(); 
+    }
+
+    const headings = blogContent.querySelectorAll("h1, h2, h3, h4, h5, h6");
+    const tocBody = document.querySelector(".table-heading__body ul");
+
+    if (headings.length && tocBody) {
+        tocBody.innerHTML = ""; 
+        headings.forEach((h, index) => {
+            const text = h.textContent.trim();
+            const id = toSlug(text) || `heading-${index}`;
+            h.id = id;
+
+            const li = document.createElement("li");
+            const a = document.createElement("a");
+            a.href = `#${id}`;
+            a.textContent = text;
+            li.appendChild(a);
+            tocBody.appendChild(li);
+        });
+    }
+
+    const tocTop = document.querySelector(".table-heading__top");
+    const tocBottom = document.querySelector(".table-heading__body");
+
+    if (tocTop && tocBottom) {
+        // Toggle khi bấm top
+        tocTop.addEventListener("click", function (e) {
+            e.stopPropagation(); // chặn nổi bọt
+            tocBottom.classList.toggle("open");
+        });
+
+        // Bấm vào link thì đóng TOC
+        tocBottom.querySelectorAll("a").forEach(a => {
+            a.addEventListener("click", () => {
+                tocBottom.classList.remove("open");
+            });
+        });
+
+        // Bấm ra ngoài thì đóng TOC
+        document.addEventListener("click", function (e) {
+            if (!e.target.closest(".table-heading")) {
+                tocBottom.classList.remove("open");
+            }
+        });
+    }
+});
+
+
+// js phần tắt mở popup đăng ký
+document.addEventListener("DOMContentLoaded", () => {
+  const btnRec = document.getElementById("recruitmentReg");
+  const popupRecContainer = document.querySelector(".recruitment-popup");
+  const btnClose = document.getElementById("close-btn");
+  const popupContainer = document.querySelector(".recruitment-form__container");
+
+  if (!btnRec || !popupRecContainer || !btnClose || !popupContainer) return;
+
+  btnRec.addEventListener("click", () => {
+    popupRecContainer.classList.add("active");
+  });
+
+  btnClose.addEventListener("click", () => {
+    popupRecContainer.classList.remove("active");
+  });
+
+  popupRecContainer.addEventListener("click", (e) => {
+    if (!popupContainer.contains(e.target)) {
+      popupRecContainer.classList.remove("active");
+    }
+  });
+
+
 });

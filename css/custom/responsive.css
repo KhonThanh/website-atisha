@@ -2,6 +2,10 @@
     .feedback-content {
         flex: 0 0 75%;
     }
+
+    .recruitment-btn {
+        display: none;
+    }
 }
 
 @media screen and (min-width: 1074px) {
@@ -40,8 +44,23 @@
         -webkit-line-clamp: 3;
     }
 
-    .news-page__container>div{
+    .news-page__container>div {
         flex-direction: column;
+    }
+
+    .job-filter,
+    .recruitment-container {
+        flex-direction: column;
+    }
+
+    .recruitment-menu {
+        width: 100%;
+        position: unset;
+    }
+
+    .job-filter__time,
+    .job-filter__location {
+        width: 100%;
     }
 }
 
@@ -49,7 +68,6 @@
     .product-container {
         justify-content: flex-start;
         overflow-x: auto;
-        /* scroll-snap-type: x mandatory; */
         padding: 10px 0px;
         -webkit-overflow-scrolling: touch;
     }
@@ -138,8 +156,17 @@
         flex-wrap: wrap;
     }
 
-    .news-leftside__top{
+    .news-leftside__top {
         flex-direction: column;
+    }
+
+    .recruitment-btn {
+        padding: 5px;
+        font-size: 2vw;
+        width: fit-content;
+        max-width: 10vw;
+        width: 100%;
+        margin-left: 2px;
     }
 }
 
@@ -170,6 +197,9 @@
 
     .product-page__item {
         width: calc(100% / 3 - 15px);
+    }
+    .job-card{
+        width: 100%;
     }
 }
 
@@ -203,9 +233,21 @@
         display: flex;
     }
 
-    .contact-info__container{
+    .contact-info__container {
         justify-content: center;
         gap: 5px;
+    }
+
+    .allproduct-type__item {
+        flex: 1 0 calc(100% / 2 - 15px);
+    }
+
+    .recruitment-popup__title {
+        padding: 15px 20px;
+    }
+
+    .recruitment-form__popup {
+        padding: 10px 25px;
     }
 
 }

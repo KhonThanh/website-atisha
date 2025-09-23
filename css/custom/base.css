@@ -2,6 +2,7 @@
   --primary-color: #9ABB0C;
   --secondary-color: #EA445A;
   --orange-color: #F17C2C;
+  --yellow-color: #FCBC40;
   --white-color: #ffffff;
   --black-color: #3c3c3c;
   --gray-color: #F6F6F6;
@@ -61,7 +62,7 @@ header {
   top: 0px;
   left: 0px;
   background-color: var(--white-color);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0px 1px rgba(0, 0, 0, 0.15);
   padding-bottom: 10px;
 }
 

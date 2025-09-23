@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATISHA</title>
+    <link rel="icon" type="image/png" href="./img/logo/logo-menu.png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+    <header class="container-f" data-include="./component/header.html"></header>
+    <div class=" center-hor bg-white menu-mobile__container" data-include="./component/menumobile.html"> </div>
+    <main class="container-f flex flex-col center-hor">
+        <section class="flex bg-gray container-f ">
+            <div class="container-l nav-bar__container">
+                <a href="#" class="nav-bar__item">Trang chủ</a>
+                <a href="#" class="nav-bar__item">Tuyển dụng</a>
+            </div>
+        </section>
+        <section class="container-f flex flex-col bg-white news-page__container">
+            <div class="container-l flex recruitment-container">
+
+                <aside class="recruitment-menu">
+                    <form class="flex flex-col recruitment-form">
+                        <div class="recruitment-form__title">
+                            <h3>Nhận tin tuyển dụng qua email</h3>
+                        </div>
+                        <div class=" flex flex-col recruitment-form__content">
+                            <input type="text" class="recruitment-form__input" placeholder="Họ tên" required="">
+                            <input type="email" class="recruitment-form__input" placeholder="Email của bạn" required="">
+                            <button type="submit" class="recruitment-form__btn">Đăng ký</button>
+                        </div>
+                    </form>
+                </aside>
+
+                <section class="flex flex-col job-expired hidden-section show-up" style="transition-delay: 40ms;">
+                    <div class="flex job-filter center-ver">
+                        <select class="job-filter__location">
+                            <option value="">-- Địa điểm --</option>
+                            <option value="angiang">An Giang</option>
+                            <option value="binhphuoc">Bình Phước</option>
+                            <option value="tphcm">TP.HCM</option>
+                        </select>
+
+                        <div class="flex job-filter__time center-ver">
+                            <label><input type="radio" name="time" checked=""> 30 ngày</label>
+                            <label><input type="radio" name="time"> 60 ngày</label>
+                            <label><input type="radio" name="time"> 90 ngày</label>
+                            <button class="job-filter__btn" type="button">Tìm kiếm</button>
+                        </div>
+
+                    </div>
+                    <div class="flex job-list">
+                        <a target="_blank" href="./recruitment-detail.html" class="flex job-card">
+                            <img src="./img/logo/logo-footer.webp" alt="Lộc Trời" class="job-card__logo">
+                            <div class="job-card__info">
+                                <h3 class="job-card__title">Trưởng phòng Kho</h3>
+                                <p class="job-card__company">Công ty TNHH MTV Lương thực Vĩnh Bình</p>
+                                <p class="job-card__salary">Lương cạnh tranh</p>
+                                <p class="job-card__location">An Giang</p>
+                                <p class="job-card__time">4 ngày trước</p>
+                            </div>
+                        </a>
+
+                        <a target="_blank" href="./recruitment-detail.html" class="flex job-card">
+                            <img src="./img/logo/logo-footer.webp" alt="Lộc Trời" class="job-card__logo">
+                            <div class="job-card__info">
+                                <h3 class="job-card__title">Nhân viên Marketing</h3>
+                                <p class="job-card__company">VPDD Sóc Trăng</p>
+                                <p class="job-card__salary">Lương cạnh tranh</p>
+                                <p class="job-card__location">Sóc Trăng</p>
+                                <p class="job-card__time">39 ngày trước</p>
+                            </div>
+                        </a>
+
+                        <a target="_blank" href="./recruitment-detail.html" class="flex job-card">
+                            <img src="./img/logo/logo-footer.webp" alt="Lộc Trời" class="job-card__logo">
+                            <div class="job-card__info">
+                                <h3 class="job-card__title">Nhân viên bán hàng</h3>
+                                <p class="job-card__company">VPDD Bình Phước</p>
+                                <p class="job-card__salary">Cạnh tranh</p>
+                                <p class="job-card__location">Bình Phước</p>
+                                <p class="job-card__time">60 ngày trước</p>
+                            </div>
+                        </a>
+
+                        <a target="_blank" href="./recruitment-detail.html" class="flex job-card">
+                            <img src="./img/logo/logo-footer.webp" alt="Lộc Trời" class="job-card__logo">
+                            <div class="job-card__info">
+                                <h3 class="job-card__title">Chuyên viên Kinh doanh Xuất khẩu</h3>
+                                <p class="job-card__company">Phòng Xuất khẩu</p>
+                                <p class="job-card__salary">Cạnh tranh</p>
+                                <p class="job-card__location">TP.HCM</p>
+                                <p class="job-card__time">61 ngày trước</p>
+                            </div>
+                        </a>
+
+                    </div>
+
+                    <!-- Phân trang -->
+                    <div class="container-l center-hor flex product-pagination">
+                        <a href="#" id="productPaginationPrev" class="product-pagination__btn">
+                            <img src="./img/icon/chevron-left-black.svg" alt="">
+                        </a>
+                        <a href="#" class="flex center-hor center-ver product-pagination__btn active">1</a>
+                        <a href="#" class="flex center-hor center-ver product-pagination__btn">2</a>
+                        <a href="#" id="productPaginationMext" class="product-pagination__btn">
+                            <img src="./img/icon/chevron-right-black.svg" alt="">
+                        </a>
+                    </div>
+                </section>
+
+            </div>
+        </section>
+    </main>
+    <footer class="container-f bg-white center-ver" data-include="./component/footer.html"></footer>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script type="text/javascript" src="./js/frontend.js"></script>
+</body>
+
+</html>

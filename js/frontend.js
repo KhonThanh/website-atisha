@@ -438,3 +438,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 });
+
+// js chức năng share và like
+document.addEventListener("DOMContentLoaded", function () {
+  const likeBtn = document.querySelector(".btn-like");
+  const shareBtn = document.querySelector(".btn-share");
+
+  if (!likeBtn && !shareBtn) return; // không có nút nào thì thoát luôn
+
+  if (likeBtn) {
+    likeBtn.addEventListener("click", function () {
+      this.classList.toggle("active");
+    });
+  }
+
+  if (shareBtn) {
+    shareBtn.addEventListener("click", function () {
+      this.classList.toggle("active");
+    });
+  }
+});

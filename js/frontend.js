@@ -356,60 +356,60 @@ document.addEventListener("click", (e) => {
 
 //js mục lục bài viết
 document.addEventListener("DOMContentLoaded", function () {
-    const blogContent = document.querySelector(".blog-content");
-    if (!blogContent) return; 
+  const blogContent = document.querySelector(".blog-content");
+  if (!blogContent) return;
 
-    function toSlug(str) {
-        return str.normalize("NFD") 
-            .replace(/[\u0300-\u036f]/g, "") 
-            .replace(/đ/g, "d").replace(/Đ/g, "D") 
-            .replace(/\s+/g, "-") 
-            .toLowerCase(); 
-    }
+  function toSlug(str) {
+    return str.normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/đ/g, "d").replace(/Đ/g, "D")
+      .replace(/\s+/g, "-")
+      .toLowerCase();
+  }
 
-    const headings = blogContent.querySelectorAll("h1, h2, h3, h4, h5, h6");
-    const tocBody = document.querySelector(".table-heading__body ul");
+  const headings = blogContent.querySelectorAll("h1, h2, h3, h4, h5, h6");
+  const tocBody = document.querySelector(".table-heading__body ul");
 
-    if (headings.length && tocBody) {
-        tocBody.innerHTML = ""; 
-        headings.forEach((h, index) => {
-            const text = h.textContent.trim();
-            const id = toSlug(text) || `heading-${index}`;
-            h.id = id;
+  if (headings.length && tocBody) {
+    tocBody.innerHTML = "";
+    headings.forEach((h, index) => {
+      const text = h.textContent.trim();
+      const id = toSlug(text) || `heading-${index}`;
+      h.id = id;
 
-            const li = document.createElement("li");
-            const a = document.createElement("a");
-            a.href = `#${id}`;
-            a.textContent = text;
-            li.appendChild(a);
-            tocBody.appendChild(li);
-        });
-    }
+      const li = document.createElement("li");
+      const a = document.createElement("a");
+      a.href = `#${id}`;
+      a.textContent = text;
+      li.appendChild(a);
+      tocBody.appendChild(li);
+    });
+  }
 
-    const tocTop = document.querySelector(".table-heading__top");
-    const tocBottom = document.querySelector(".table-heading__body");
+  const tocTop = document.querySelector(".table-heading__top");
+  const tocBottom = document.querySelector(".table-heading__body");
 
-    if (tocTop && tocBottom) {
-        // Toggle khi bấm top
-        tocTop.addEventListener("click", function (e) {
-            e.stopPropagation(); // chặn nổi bọt
-            tocBottom.classList.toggle("open");
-        });
+  if (tocTop && tocBottom) {
+    // Toggle khi bấm top
+    tocTop.addEventListener("click", function (e) {
+      e.stopPropagation(); // chặn nổi bọt
+      tocBottom.classList.toggle("open");
+    });
 
-        // Bấm vào link thì đóng TOC
-        tocBottom.querySelectorAll("a").forEach(a => {
-            a.addEventListener("click", () => {
-                tocBottom.classList.remove("open");
-            });
-        });
+    // Bấm vào link thì đóng TOC
+    tocBottom.querySelectorAll("a").forEach(a => {
+      a.addEventListener("click", () => {
+        tocBottom.classList.remove("open");
+      });
+    });
 
-        // Bấm ra ngoài thì đóng TOC
-        document.addEventListener("click", function (e) {
-            if (!e.target.closest(".table-heading")) {
-                tocBottom.classList.remove("open");
-            }
-        });
-    }
+    // Bấm ra ngoài thì đóng TOC
+    document.addEventListener("click", function (e) {
+      if (!e.target.closest(".table-heading")) {
+        tocBottom.classList.remove("open");
+      }
+    });
+  }
 });
 
 
@@ -455,6 +455,50 @@ document.addEventListener("DOMContentLoaded", function () {
   if (shareBtn) {
     shareBtn.addEventListener("click", function () {
       this.classList.toggle("active");
+    });
+  }
+});
+
+// js hình ảnh sản phẩm
+document.addEventListener("DOMContentLoaded", function () {
+  const container = document.querySelector(".product-container__image");
+  if (!container) return;
+
+  const mainImage = container.querySelector(".product-image > img");
+  const thumbItems = container.querySelectorAll(".product-image__item img");
+  const prevBtn = container.querySelector(".product-image button:first-child");
+  const nextBtn = container.querySelector(".product-image button:last-child");
+
+  if (!mainImage || !thumbItems.length) return; 
+
+  let currentIndex = 0;
+
+  // Hàm đổi ảnh
+  function showImage(index) {
+    currentIndex = index;
+    mainImage.src = thumbItems[currentIndex].src;
+  }
+
+  // Click thumbnail
+  thumbItems.forEach((img, index) => {
+    img.addEventListener("click", () => {
+      showImage(index);
+    });
+  });
+
+  // Click prev
+  if (prevBtn) {
+    prevBtn.addEventListener("click", () => {
+      currentIndex = (currentIndex - 1 + thumbItems.length) % thumbItems.length;
+      showImage(currentIndex);
+    });
+  }
+
+  // Click next
+  if (nextBtn) {
+    nextBtn.addEventListener("click", () => {
+      currentIndex = (currentIndex + 1) % thumbItems.length;
+      showImage(currentIndex);
     });
   }
 });

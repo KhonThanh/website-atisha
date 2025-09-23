@@ -531,6 +531,10 @@
     flex: 0 0 40%;
 }
 
+.why-choose__image img{
+    border-radius: 10px;
+}
+
 .why-choose__content {
     flex: 1 1 60%;
 }
@@ -1550,6 +1554,7 @@ ul {
 .feedback-image img {
     aspect-ratio: 366 / 275;
     max-width: 366px;
+    border-radius: 10px;
 }
 
 .feedback-content {
@@ -1557,6 +1562,7 @@ ul {
     padding: 60px 60px 60px 200px;
     gap: 10px;
     margin-bottom: 160px;
+    border-radius: 10px;
 }
 
 .feedback-content img {

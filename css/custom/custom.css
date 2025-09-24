@@ -2186,7 +2186,8 @@ footer {
     color: var(--secondary-color);
 }
 
-.product-price span{
+.product-container__info .product-price span,
+.price-discount__container span:last-child{
     text-decoration: line-through;
 }
 

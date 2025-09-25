@@ -118,6 +118,10 @@
         aspect-ratio: 9 / 16;
     }
 
+    .menu-shortcut__container{
+        display: none;
+    }
+
 }
 
 @media screen and (min-width: 769px) {

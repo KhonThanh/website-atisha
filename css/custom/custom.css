@@ -346,7 +346,7 @@
 .product-title img,
 .knowledge-container>div:first-child img,
 .news-container>div:first-child img,
-.intro-content img {
+.intro-content img:nth-child(2) {
     /* max-height: 31px; */
     width: auto;
     height: 100%;

@@ -145,8 +145,9 @@
     }
 
     .product-type{
-        width: 1000px;
+        width: 1200px;
         flex-wrap: wrap;
+        gap: 10px;
     }
 
     .product-type__item {

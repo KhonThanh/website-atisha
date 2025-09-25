@@ -469,7 +469,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const prevBtn = container.querySelector(".product-image button:first-child");
   const nextBtn = container.querySelector(".product-image button:last-child");
 
-  if (!mainImage || !thumbItems.length) return; 
+  if (!mainImage || !thumbItems.length) return;
 
   let currentIndex = 0;
 
@@ -501,4 +501,90 @@ document.addEventListener("DOMContentLoaded", function () {
       showImage(currentIndex);
     });
   }
+});
+
+// js popup
+document.addEventListener("DOMContentLoaded", function () {
+  const sliderFor = document.querySelector(".gallery-slider-for");
+  const sliderNav = document.querySelector(".gallery-slider-nav");
+
+  if (!sliderFor || !sliderNav || !$(sliderFor).slick || !$(sliderNav).slick) return;
+
+  const items = sliderNav.querySelectorAll("div");
+  const minSlides = 10;
+
+  if (items.length && items.length < minSlides) {
+    let currentCount = items.length;
+    let i = 0;
+
+    while (currentCount < minSlides) {
+      const clone = items[i % items.length].cloneNode(true);
+      sliderNav.appendChild(clone);
+      currentCount++;
+      i++;
+    }
+  }
+
+  // Slider chính
+  $(sliderFor).slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    fade: true,
+    infinite: true,
+    asNavFor: ".gallery-slider-nav"
+  });
+
+  // Slider nav
+  $(sliderNav).slick({
+    arrows: true,
+    slidesToShow: 9,
+    slidesToScroll: 1,
+    asNavFor: ".gallery-slider-for",
+    dots: false,
+    focusOnSelect: true,
+    infinite: true,
+    centerMode: true,
+    centerPadding: "0px",
+     prevArrow: $(".btn-prev"), 
+    nextArrow: $(".btn-next"),
+  });
+});
+
+// js popup hình sản phẩm
+document.addEventListener("DOMContentLoaded", function () {
+  const introSlide = document.querySelector(".intro-slide");
+  const gallerySection = document.querySelector(".gallery-section");
+  const btnClose = document.querySelector(".gallery-section .btn-close");
+
+  if (!introSlide || !gallerySection) return;
+
+  // Bấm ảnh trong intro-slide
+  const imgs = introSlide.querySelectorAll("img");
+  imgs.forEach(img => {
+    img.addEventListener("click", () => {
+      gallerySection.classList.add("active");
+    });
+  });
+
+  // Bấm nút close
+  if (btnClose) {
+    btnClose.addEventListener("click", () => {
+      gallerySection.classList.remove("active");
+    });
+  }
+
+  // Bấm ra ngoài overlay cũng tắt
+  gallerySection.addEventListener("click", (e) => {
+    if (e.target === gallerySection) {
+      gallerySection.classList.remove("active");
+    }
+  });
+
+  // Bấm ESC để tắt
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && gallerySection.classList.contains("active")) {
+      gallerySection.classList.remove("active");
+    }
+  });
 });

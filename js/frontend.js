@@ -26,12 +26,20 @@ Promise.all(
   })
 );
 
-// js thêm width và height vào bất kì thẻ img
+// js thêm width và height vào bất kì thẻ img và thêm alt
 function applyLazyAndDimensions(img) {
+  // Lazy load
   if (!img.hasAttribute("loading")) {
     img.setAttribute("loading", "lazy");
   }
 
+  // Gán alt nếu chưa có
+  if (!img.hasAttribute("alt") || img.alt.trim() === "") {
+    let fileName = img.src.split("/").pop().split(".")[0]; 
+    img.setAttribute("alt", fileName.replace(/[-_]/g, " ")); 
+  }
+
+  // Cập nhật kích thước
   const updateSize = () => {
     if (img.naturalWidth > 0 && img.naturalHeight > 0) {
       setDimensions(img);

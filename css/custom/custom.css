@@ -3,6 +3,13 @@
     padding: 10px 0px;
 }
 
+.logo img{
+    aspect-ratio: 120 / 59.25;
+    max-width: 120px;
+    width: 100%;
+    height: auto;
+}
+
 .header-top,
 .header-bottom {
     justify-content: space-between;

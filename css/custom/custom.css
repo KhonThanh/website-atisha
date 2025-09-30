@@ -1560,7 +1560,7 @@ ul {
 .feedback-container {
     padding: 80px 0px 80px;
     gap: 30px;
-    max-height: 400px;
+    max-height: 650px;
     overflow:hidden;
 }
 

@@ -3,7 +3,7 @@
     padding: 10px 0px;
 }
 
-.logo img{
+.logo img {
     aspect-ratio: 120 / 59.25;
     max-width: 120px;
     width: 100%;
@@ -32,24 +32,25 @@
     border: 1px solid var(--secondary-color);
     color: var(--secondary-color);
     transition: all 0.6s ease;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.header-function__blog img{
+    width: 12px;
+    height: auto;
 }
 
 .pagenotfound-container a:hover,
 .job-filter__btn:hover,
 .job-card:hover,
-.header-function__contact:hover,
-.header-function__blog:hover {
+.header-function__contact:hover {
     transform: translateY(-6px) scale(1.03);
     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25);
 }
 
 .job-card:hover {
     border: 1px solid var(--primary-color);
-}
-
-.header-function__blog:hover {
-    background-color: var(--secondary-color);
-    color: var(--white-color);
 }
 
 .header-function__contact {
@@ -63,6 +64,7 @@
     padding: 12px 20px;
     border-radius: 10px;
     font-weight: 500;
+    line-height: 1;
 }
 
 .search-box {
@@ -118,7 +120,7 @@
 .menu-list__table {}
 
 
-.menu-item__exception{
+.menu-item__exception {
     display: none;
 }
 
@@ -130,12 +132,12 @@
     margin-right: 20px;
 }
 
-.clone-menu__container{
+.clone-menu__container {
     justify-content: left;
     margin-left: 10px;
 }
 
-.clone-menu__container p{
+.clone-menu__container p {
     color: var(--white-color);
 }
 
@@ -288,6 +290,28 @@
 .custom-dots .slick-active button {
     background: var(--primary-color);
 }
+
+.header-newsandknowledge__container {
+    position: relative;
+}
+
+.header-newsandknowledge__content {
+    position: absolute;
+    background-color: var(--white-color);
+    z-index: 1;
+    padding: 10px;
+    border: 1px solid var(--primary-color);
+    border-radius: 10px;
+    gap: 10px;
+    top: 110%;
+    display: none;
+}
+
+.header-newsandknowledge__content.active{
+    display: flex;
+}
+
+.header-function__blog {}
 
 /* css menu mobile */
 .menu-mobile__container {
@@ -692,6 +716,7 @@
     object-position: center;
 }
 
+.product-detail__container,
 .product-container {
     gap: 30px;
 }
@@ -1584,7 +1609,7 @@ ul {
     padding: 80px 0px 80px;
     gap: 30px;
     max-height: 650px;
-    overflow:hidden;
+    overflow: hidden;
 }
 
 .feedback-item {

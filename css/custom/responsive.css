@@ -204,9 +204,9 @@
         margin-left: 2px;
     }
 
-    /* .product-container{
+    .product-detail__container{
         flex-direction: column;
-    } */
+    }
 }
 
 @media screen and (max-width : 700px) {

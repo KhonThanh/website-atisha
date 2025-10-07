@@ -602,3 +602,21 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// js bản tin
+document.addEventListener("DOMContentLoaded", () => {
+  const blogButton = document.querySelector(".header-function__blog");
+  const blogContent = document.querySelector(".header-newsandknowledge__content");
+
+  if (!blogButton || !blogContent) return;
+
+  blogButton.addEventListener("click", (e) => {
+    e.stopPropagation();
+    blogContent.classList.toggle("active");
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!blogButton.contains(e.target) && !blogContent.contains(e.target)) {
+      blogContent.classList.remove("active");
+    }
+  });
+});

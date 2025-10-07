@@ -117,13 +117,29 @@
 
 .menu-list__table {}
 
+
+.menu-item__exception{
+    display: none;
+}
+
 .submenu>div>a,
+.menu-item__exception>a,
 .menu-item>a {
     text-align: right;
     padding: 10px 0px;
     margin-right: 20px;
 }
 
+.clone-menu__container{
+    justify-content: left;
+    margin-left: 10px;
+}
+
+.clone-menu__container p{
+    color: var(--white-color);
+}
+
+.menu-item__exception>a,
 .menu-item>a {
     color: var(--white-color);
 }

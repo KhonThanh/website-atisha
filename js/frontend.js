@@ -254,6 +254,7 @@ if (menuButtonTable && menuTable) {
 document.addEventListener("DOMContentLoaded", () => {
   const menuButtonMobile = document.getElementById('menuMobileButton');
   const menuMobileList = document.querySelector('.menu-list__mobile');
+  const closeMenuButton = document.querySelector('.clone-menu__container'); // nút ⨉
 
   if (menuButtonMobile && menuMobileList) {
     // Toggle toàn bộ menu mobile
@@ -266,30 +267,34 @@ document.addEventListener("DOMContentLoaded", () => {
     document.addEventListener('click', (e) => {
       if (!menuMobileList.contains(e.target) && !menuButtonMobile.contains(e.target)) {
         menuMobileList.classList.remove('active');
-        // đóng hết submenu khi đóng menu mobile
         menuMobileList.querySelectorAll('.submenu').forEach(sub => sub.classList.remove('active'));
       }
     });
 
-    // Toggle submenu trong menu mobile
+    // Toggle submenu
     const menuItems = menuMobileList.querySelectorAll('.menu-item > a');
     menuItems.forEach(link => {
       link.addEventListener('click', (e) => {
-        e.preventDefault(); // không cho nhảy link
+        e.preventDefault();
         const parentItem = link.parentElement;
         const submenu = parentItem.querySelector('.submenu');
-
         if (submenu) {
-          // Đóng hết submenu khác
           menuMobileList.querySelectorAll('.submenu.active').forEach(sub => {
             if (sub !== submenu) sub.classList.remove('active');
           });
-
-          // Toggle submenu hiện tại
           submenu.classList.toggle('active');
         }
       });
     });
+
+    // 🆕 Khi bấm nút ⨉ (clone-menu__container) thì đóng menu mobile
+    if (closeMenuButton) {
+      closeMenuButton.addEventListener('click', (e) => {
+        e.stopPropagation();
+        menuMobileList.classList.remove('active');
+        menuMobileList.querySelectorAll('.submenu').forEach(sub => sub.classList.remove('active'));
+      });
+    }
   }
 });
 

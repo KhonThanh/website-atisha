@@ -674,39 +674,44 @@ if (container) {
 // js cuộn ngang type product
 
 document.addEventListener("DOMContentLoaded", () => {
-  const container = document.querySelector('.product-type');
+  const container = document.querySelector(".product-container__mb");
 
-  if (container) {
-    let isDown = false;
-    let startX;
-    let scrollLeft;
+  if (!container) return;
 
-    container.addEventListener('mousedown', startDrag);
-    container.addEventListener('touchstart', startDrag);
-    container.addEventListener('mousemove', moveDrag);
-    container.addEventListener('touchmove', moveDrag);
-    container.addEventListener('mouseup', endDrag);
-    container.addEventListener('mouseleave', endDrag);
-    container.addEventListener('touchend', endDrag);
+  let isDown = false;
+  let startX;
+  let scrollLeft;
 
-    function startDrag(e) {
-      isDown = true;
-      container.classList.add('grabbing');
-      startX = e.pageX || e.touches[0].pageX;
-      scrollLeft = container.scrollLeft;
-    }
+  // Khi bắt đầu nhấn hoặc chạm
+  container.addEventListener("mousedown", startDrag);
+  container.addEventListener("touchstart", startDrag);
 
-    function moveDrag(e) {
-      if (!isDown) return;
-      e.preventDefault();
-      const x = e.pageX || e.touches[0].pageX;
-      const walk = (x - startX) * 1.2;
-      container.scrollLeft = scrollLeft - walk;
-    }
+  // Khi kéo hoặc vuốt
+  container.addEventListener("mousemove", moveDrag);
+  container.addEventListener("touchmove", moveDrag);
 
-    function endDrag() {
-      isDown = false;
-      container.classList.remove('grabbing');
-    }
+  // Khi thả tay ra hoặc rời khỏi vùng
+  container.addEventListener("mouseup", endDrag);
+  container.addEventListener("mouseleave", endDrag);
+  container.addEventListener("touchend", endDrag);
+
+  function startDrag(e) {
+    isDown = true;
+    container.classList.add("grabbing");
+    startX = e.pageX || e.touches[0].pageX;
+    scrollLeft = container.scrollLeft;
+  }
+
+  function moveDrag(e) {
+    if (!isDown) return;
+    e.preventDefault(); // Ngăn cuộn dọc khi vuốt ngang
+    const x = e.pageX || e.touches[0].pageX;
+    const walk = (x - startX) * 1.2; // hệ số tốc độ kéo
+    container.scrollLeft = scrollLeft - walk;
+  }
+
+  function endDrag() {
+    isDown = false;
+    container.classList.remove("grabbing");
   }
 });

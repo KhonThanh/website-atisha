@@ -69,6 +69,7 @@
 }
 
 @media screen and (max-width: 900px) {
+    .product-container__mb,
     .product-container {
         justify-content: flex-start;
         overflow-x: auto;
@@ -260,6 +261,10 @@
         padding-bottom: 0px;
     }
 
+    .product-tab__button{
+        padding: 15px 20px;
+    }
+
     .product-page__item {
         width: calc(100% / 2 - 15px);
     }
@@ -268,10 +273,6 @@
 @media screen and (max-width: 551px) {
     .advise-intro__top {
         flex-direction: column;
-    }
-
-    .product-type {
-        width: 950px;
     }
 
 

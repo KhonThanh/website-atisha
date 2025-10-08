@@ -35,8 +35,8 @@ function applyLazyAndDimensions(img) {
 
   // Gán alt nếu chưa có
   if (!img.hasAttribute("alt") || img.alt.trim() === "") {
-    let fileName = img.src.split("/").pop().split(".")[0]; 
-    img.setAttribute("alt", fileName.replace(/[-_]/g, " ")); 
+    let fileName = img.src.split("/").pop().split(".")[0];
+    img.setAttribute("alt", fileName.replace(/[-_]/g, " "));
   }
 
   // Cập nhật kích thước
@@ -559,7 +559,7 @@ document.addEventListener("DOMContentLoaded", function () {
     infinite: true,
     centerMode: true,
     centerPadding: "0px",
-     prevArrow: $(".btn-prev"), 
+    prevArrow: $(".btn-prev"),
     nextArrow: $(".btn-next"),
   });
 });
@@ -669,3 +669,44 @@ if (container) {
     container.scrollLeft = startScrollLeft - walk;
   });
 }
+
+
+// js cuộn ngang type product
+
+document.addEventListener("DOMContentLoaded", () => {
+  const container = document.querySelector('.product-type');
+
+  if (container) {
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    container.addEventListener('mousedown', startDrag);
+    container.addEventListener('touchstart', startDrag);
+    container.addEventListener('mousemove', moveDrag);
+    container.addEventListener('touchmove', moveDrag);
+    container.addEventListener('mouseup', endDrag);
+    container.addEventListener('mouseleave', endDrag);
+    container.addEventListener('touchend', endDrag);
+
+    function startDrag(e) {
+      isDown = true;
+      container.classList.add('grabbing');
+      startX = e.pageX || e.touches[0].pageX;
+      scrollLeft = container.scrollLeft;
+    }
+
+    function moveDrag(e) {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX || e.touches[0].pageX;
+      const walk = (x - startX) * 1.2;
+      container.scrollLeft = scrollLeft - walk;
+    }
+
+    function endDrag() {
+      isDown = false;
+      container.classList.remove('grabbing');
+    }
+  }
+});

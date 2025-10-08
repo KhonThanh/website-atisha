@@ -349,6 +349,7 @@
     padding: 10px 0;
     background: #fff;
     min-height: 0;
+    height: 0px;
     opacity: 0;
     transform: translateY(-10px);
     overflow: hidden;

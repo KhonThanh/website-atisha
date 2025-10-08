@@ -274,11 +274,6 @@
         width: 950px;
     }
 
-    .product-type__item,
-    .product-item {
-        flex: 0 0 180px;
-        scroll-snap-align: start;
-    }
 
     .menu-mobile__container {
         display: flex;

@@ -118,7 +118,7 @@ $(document).ready(function () {
 
   $slider.slick({
     infinite: true,
-    autoplay: true,
+    autoplay: false,
     dots: false,
     arrows: false,
     slidesToShow: 1,

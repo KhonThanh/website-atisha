@@ -69,6 +69,7 @@
 }
 
 @media screen and (max-width: 900px) {
+
     .product-container__mb,
     .product-container {
         justify-content: flex-start;
@@ -147,6 +148,11 @@
 }
 
 @media screen and (max-width: 768px) {
+
+    :root {
+        --font-size-base: 14px;
+    }
+
     .news-top__container {
         flex-direction: column;
     }
@@ -222,6 +228,10 @@
         color: var(--white-color);
     }
 
+    .feedback-container {
+        max-height: unset;
+    }
+
     /* .product-container, */
     .feedback-item {
         flex-direction: column;
@@ -239,6 +249,20 @@
     .feedback-content {
         padding: 20px;
         margin-bottom: unset;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+    }
+
+    .intro-container,
+    .toppage-product__container,
+    .news-container,
+    .knowledge-container,
+    .feedback-container {
+        padding: 40px 0px;
+    }
+
+    .why-choose {
+        padding: 0px;
     }
 
     .product-page__item {
@@ -247,6 +271,13 @@
 
     .job-card {
         width: 100%;
+    }
+
+    .feedback-title h2,
+    .product-title h2,
+    .knowledge-container h2,
+    .news-container>div:first-child>h2 {
+        font-size: calc(var(--font-size-base) + 10px);
     }
 }
 
@@ -261,7 +292,7 @@
         padding-bottom: 0px;
     }
 
-    .product-tab__button{
+    .product-tab__button {
         padding: 15px 20px;
     }
 

@@ -70,18 +70,20 @@
 
 @media screen and (max-width: 900px) {
     .product-container {
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        scroll-behavior: smooth;
-        gap: 20px;
-        padding: 10px;
         justify-content: flex-start;
+        overflow-x: auto;
+        padding: 10px 0px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    .product-container::-webkit-scrollbar {
+        display: none;
     }
 
     .product-item {
-        flex: 0 0 calc(40% - 20px);
-        min-width: calc(40% - 20px);
+        flex: 0 0 200px;
+        scroll-snap-align: start;
     }
 
     .product-item:first-child {
@@ -94,10 +96,6 @@
 
     .product-container {
         gap: 15px;
-    }
-
-    .product-container::-webkit-scrollbar {
-        display: none;
     }
 
 }

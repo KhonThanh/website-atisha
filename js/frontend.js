@@ -621,97 +621,47 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// js vuốt sản phẩm ngang
-const container = document.querySelector('.product-container');
-
-if (container) {
-  let isDown = false;
-  let startX;
-  let scrollLeft;
-
-  container.addEventListener('mousedown', e => {
-    isDown = true;
-    container.classList.add('active');
-    startX = e.pageX - container.offsetLeft;
-    scrollLeft = container.scrollLeft;
-  });
-
-  container.addEventListener('mouseleave', () => {
-    isDown = false;
-    container.classList.remove('active');
-  });
-
-  container.addEventListener('mouseup', () => {
-    isDown = false;
-    container.classList.remove('active');
-  });
-
-  container.addEventListener('mousemove', e => {
-    if (!isDown) return;
-    e.preventDefault();
-    const x = e.pageX - container.offsetLeft;
-    const walk = (x - startX) * 1; // tốc độ kéo (1 = tự nhiên)
-    container.scrollLeft = scrollLeft - walk;
-  });
-
-  // Hỗ trợ cảm ứng trên điện thoại
-  let startTouchX = 0;
-  let startScrollLeft = 0;
-
-  container.addEventListener('touchstart', e => {
-    startTouchX = e.touches[0].pageX;
-    startScrollLeft = container.scrollLeft;
-  });
-
-  container.addEventListener('touchmove', e => {
-    const x = e.touches[0].pageX;
-    const walk = (x - startTouchX) * 1;
-    container.scrollLeft = startScrollLeft - walk;
-  });
-}
-
-
-// js cuộn ngang type product
+// js tính năng vuốt của phần type sản phẩm và sản phẩm
 
 document.addEventListener("DOMContentLoaded", () => {
-  const container = document.querySelector(".product-container__mb");
+  function enableHorizontalSwipe(selector, speed = 1) {
+    const container = document.querySelector(selector);
+    if (!container) return;
 
-  if (!container) return;
+    let isDown = false;
+    let startX, scrollLeft;
 
-  let isDown = false;
-  let startX;
-  let scrollLeft;
+    const startDrag = e => {
+      isDown = true;
+      container.classList.add("grabbing");
+      startX = e.pageX || e.touches[0].pageX;
+      scrollLeft = container.scrollLeft;
+    };
 
-  // Khi bắt đầu nhấn hoặc chạm
-  container.addEventListener("mousedown", startDrag);
-  container.addEventListener("touchstart", startDrag);
+    const moveDrag = e => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX || e.touches[0].pageX;
+      const walk = (x - startX) * speed;
+      container.scrollLeft = scrollLeft - walk;
+    };
 
-  // Khi kéo hoặc vuốt
-  container.addEventListener("mousemove", moveDrag);
-  container.addEventListener("touchmove", moveDrag);
+    const endDrag = () => {
+      isDown = false;
+      container.classList.remove("grabbing");
+    };
 
-  // Khi thả tay ra hoặc rời khỏi vùng
-  container.addEventListener("mouseup", endDrag);
-  container.addEventListener("mouseleave", endDrag);
-  container.addEventListener("touchend", endDrag);
-
-  function startDrag(e) {
-    isDown = true;
-    container.classList.add("grabbing");
-    startX = e.pageX || e.touches[0].pageX;
-    scrollLeft = container.scrollLeft;
+    // Gán event cho cả chuột & cảm ứng
+    container.addEventListener("mousedown", startDrag);
+    container.addEventListener("touchstart", startDrag);
+    container.addEventListener("mousemove", moveDrag);
+    container.addEventListener("touchmove", moveDrag);
+    container.addEventListener("mouseup", endDrag);
+    container.addEventListener("mouseleave", endDrag);
+    container.addEventListener("touchend", endDrag);
   }
 
-  function moveDrag(e) {
-    if (!isDown) return;
-    e.preventDefault(); // Ngăn cuộn dọc khi vuốt ngang
-    const x = e.pageX || e.touches[0].pageX;
-    const walk = (x - startX) * 1.2; // hệ số tốc độ kéo
-    container.scrollLeft = scrollLeft - walk;
-  }
-
-  function endDrag() {
-    isDown = false;
-    container.classList.remove("grabbing");
-  }
+  // Gọi hàm cho 2 container
+  enableHorizontalSwipe(".product-container", 1);
+  enableHorizontalSwipe(".product-container__mb", 1.2);
 });

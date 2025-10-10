@@ -16,7 +16,7 @@
 <body>
     <header class="container-f" data-include="./component/header.html"></header>
     <div class=" center-hor bg-white menu-mobile__container" data-include="./component/menumobile.html"> </div>
-    <main class="container-f flex flex-col center-hor">
+    <main id="intro-content" class="container-f flex flex-col center-hor">
         <section class="flex bg-gray container-f ">
             <div class="container-l nav-bar__container">
                 <a href="#" class="nav-bar__item">Trang chủ</a>
@@ -27,14 +27,14 @@
             <div class="container-l">
                 <img src="./img/banner/banner.webp" alt="">
             </div>
-            <div class="bg-white container-f menu-shortcut__container">
-                <div class="container-xs flex center-hor">
-                    <a href="#" class="intro-banner__shortcut">Về Jan’s Atisha</a>
-                    <a href="#" class="intro-banner__shortcut">Giá trị doanh nghiệp</a>
-                    <a href="#" class="intro-banner__shortcut">Giá trị cốt lỗi</a>
-                    <a href="#" class="intro-banner__shortcut">Sản phẩm kinh doanh</a>
-                    <a href="#" class="intro-banner__shortcut">Quy trình sản xuất</a>
-                </div>
+        </section>
+        <section class="container-f menu-shortcut__container  bg-white ">
+            <div class="container-xs flex center-hor ">
+                <a href="#" class="intro-banner__shortcut">Về Jan’s Atisha</a>
+                <a href="#" class="intro-banner__shortcut">Giá trị doanh nghiệp</a>
+                <a href="#" class="intro-banner__shortcut">Giá trị cốt lỗi</a>
+                <a href="#" class="intro-banner__shortcut">Sản phẩm kinh doanh</a>
+                <a href="#" class="intro-banner__shortcut">Quy trình sản xuất</a>
             </div>
         </section>
         <section class="intro-padding bg-gray container-f ">
@@ -75,22 +75,22 @@
                 <img src="./img/icon/Vector-white.svg" alt="">
                 <div class="flex corevalues__container">
                     <div class="bg-white flex flex-col corevalues__item">
-                        <h3>TỰ NHIÊN</h3>
+                        <b>TỰ NHIÊN</b>
                         <p>Jan’s Atisha cam kết giữ trọn sự tinh khiết từ nông sản Việt. Nói không với phụ gia công
                             nghiệp. Để mỗi sản phẩm đều lành cho sức khỏe và thân thiện với môi trường.</p>
                     </div>
                     <div class="bg-white flex flex-col corevalues__item">
-                        <h3>THỦ CÔNG</h3>
+                        <b>THỦ CÔNG</b>
                         <p>Mỗi chai, mỗi giọt đều được tạo nên từ sự kiên nhẫn và bàn tay người thợ, giữ gìn hương vị
                             thuần khiết qua quá trình lên men chậm rãi.</p>
                     </div>
                     <div class="bg-white flex flex-col corevalues__item">
-                        <h3>CHÁNH NIỆM</h3>
+                        <b>CHÁNH NIỆM</b>
                         <p>Sản phẩm Atisha không chỉ tốt cho cơ thể, mà còn gọi nhắc lối sống tỉnh thức – tinh tế từ
                             điều giản dị, nuôi dưỡng cả sức khỏe và tinh thần con người.</p>
                     </div>
                     <div class="bg-white flex flex-col corevalues__item">
-                        <h3>BỀN VỮNG</h3>
+                        <b>BỀN VỮNG</b>
                         <p>Atisha phát triển hài hòa cùng cộng đồng và môi trường, đồng hành với người nông dân Việt
                             trên hành trình trọn vẹn giá trị lâu dài.</p>
                     </div>
@@ -103,47 +103,47 @@
                 <img src="./img/icon/Vector.webp" alt="">
                 <div class="flex allproduct-type__container">
                     <div class="bg-white flex flex-col allproduct-type__item">
-                        <h3>KOMBUCHA</h3>
+                        <b>KOMBUCHA</b>
                         <p>Mỗi chai Kombucha của Jan’s Atisha được lên men chậm rãi từ trà và trái cây Việt. Kombucha
                             mang lại sự cân bằng tự nhiên và nguồn năng lượng tươi mới.</p>
                     </div>
                     <div class="bg-white flex flex-col allproduct-type__item">
-                        <h3>MẬT CHUỐI</h3>
+                        <b>MẬT CHUỐI</b>
                         <p>Mật chuối Atisha được chắt lọc từ nông sản Việt qua quy trình ủ tự nhiên và thủ công. Vị ngọt
                             thanh, hương thơm dịu nhẹ, giàu dinh dưỡng.</p>
                     </div>
                     <div class="bg-white flex flex-col allproduct-type__item">
-                        <h3>JUICE</h3>
+                        <b>JUICE</b>
                         <p>Từ dầu hào chay, nước tương chay đến giấm balsamic chuối – Atisha tạo nên gia vị thuần chay
                             độc đáo, giúp tăng thêm hương vị món ăn.</p>
                     </div>
                     <div class="bg-white flex flex-col allproduct-type__item">
-                        <h3>BỎNG GẠO DINH DƯỠNG</h3>
+                        <b>BỎNG GẠO DINH DƯỠNG</b>
                         <p>Bột chuối, nước ép chuối lên men… những chế phẩm sáng tạo khác được làm từ nguồn chuối Việt
                             Nam dồi dào.</p>
                     </div>
                     <div class="bg-white flex flex-col allproduct-type__item">
-                        <h3>SEN</h3>
+                        <b>SEN</b>
                         <p>Từ Rice Milk, bột đóng gói đến nước bào gạo – Atisha khai thác sự tinh túy của hạt gạo Việt.
                             Những sản phẩm này nhẹ nhàng, dễ tiêu hóa và giàu năng lượng tự nhiên.</p>
                     </div>
                     <div class="bg-white flex flex-col allproduct-type__item">
-                        <h3>CÀ PHÊ</h3>
+                        <b>CÀ PHÊ</b>
                         <p>Cà phê Atisha được lựa chọn từ những hạt nguyên bản, rang thủ công để giữ trọn hương vị tự
                             nhiên.</p>
                     </div>
                     <div class="bg-white flex flex-col allproduct-type__item">
-                        <h3>CHĂM SÓC DA & LÀM ĐẸP</h3>
+                        <b>CHĂM SÓC DA & LÀM ĐẸP</b>
                         <p>Bột chuối, nước ép chuối lên men… những chế phẩm sáng tạo khác được làm từ nguồn chuối Việt
                             Nam dồi dào.</p>
                     </div>
                     <div class="bg-white flex flex-col allproduct-type__item">
-                        <h3>GIA VỊ</h3>
+                        <b>GIA VỊ</b>
                         <p>Từ Rice Milk, bột đóng gói đến nước bào gạo – Atisha khai thác sự tinh túy của hạt gạo Việt.
                             Những sản phẩm này nhẹ nhàng, dễ tiêu hóa và giàu năng lượng tự nhiên.</p>
                     </div>
                     <div class="bg-white flex flex-col allproduct-type__item">
-                        <h3>DINH DƯỠNG & SỨC KHỎE</h3>
+                        <b>DINH DƯỠNG & SỨC KHỎE</b>
                         <p>Cà phê Atisha được lựa chọn từ những hạt nguyên bản, rang thủ công để giữ trọn hương vị tự
                             nhiên.</p>
                     </div>

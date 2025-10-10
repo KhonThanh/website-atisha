@@ -4,28 +4,26 @@
 <div class="flex flex-col advise-intro">
     <div class="flex advise-intro__top">
         <div class=" flex center-ver input-box">
-            <span class="input-icon">
+            <span class="input-icon flex center-ver center-hor">
                 <img src="./img/icon/User.webp" alt="user">
             </span>
             <input type="text" placeholder="Nhập tên của bạn">
         </div>
         <div class=" flex center-ver input-box">
-            <span class="input-icon">
+            <span class="input-icon flex center-ver center-hor">
                 <img src="./img/icon/Phone.webp" alt="user">
             </span>
             <input type="text" placeholder="Nhập số điện thoại">
         </div>
     </div>
     <div class="flex  advise-intro__bottom">
-        <div class=" flex center-ver input-box">
-            <span class="input-icon">
-                <img src="./img/icon/Phone.webp" alt="user">
-            </span>
-            <input type="text" placeholder="Nhập số điện thoại">
-        </div>
-        <button class="flex btn-register">
-            <img src="./img/icon/Phone-white.svg" alt="">
-            Đăng ký
+        <select id="sort" class="advise-intro__select">
+            <option value="default">Mời bạn chọn tư vấn</option>
+            <option value="price-asc">Tư vấn mua hàng</option>
+            <option value="price-desc">Trợ thành đại lý</option>
+        </select>
+        <button class="flex btn-register center-ver center-hor">
+            Gửi
         </button>
     </div>
 </div>

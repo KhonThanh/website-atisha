@@ -539,40 +539,43 @@
 
 }
 
-.advise-intro {
-    flex-grow: 1;
-    gap: 20px;
-}
-
+.advise-intro,
 .advise-intro__top,
 .advise-intro__bottom {
     flex-grow: 1;
     gap: 10px;
 }
 
-.center-hor {}
-
+.advise-intro__select,
 .input-box {
     flex-grow: 1;
-    padding: 10px 10px;
+    padding: 10px 30px;
     border-radius: 50px;
     background-color: var(--white-color);
     box-shadow: 0px 0px 5px 0px rgba(25, 25, 25, 0.4);
     gap: 10px;
+    font-size: 12px;
 }
 
+.advise-intro__select {
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.6);
+    font-weight: 600;
+    appearance: none;
+    background: url("../../img/icon/chevron-down.webp") no-repeat right 20px center;
+    background-size: 10px;
+    cursor: pointer;
+    max-height: 48px;
+}
+
+.advise-intro__select:focus-visible {
+    outline: none;
+}
+
+.advise-intro__select,
 .input-box input {
     flex-grow: 1;
     border: none;
-    opacity: 40%;
-}
-
-.input-icon {}
-
-.btn-register img {
-    aspect-ratio: 1 / 1;
-    width: 14px;
-    height: auto;
 }
 
 .btn-register {
@@ -585,7 +588,7 @@
     gap: 20px;
     aspect-ratio: 164 / 40;
     max-width: 164px;
-    height: auto;
+    max-height: 48px;
     padding: 12px 32px;
 }
 
@@ -735,20 +738,12 @@
 }
 
 .product-item {
-    width: calc(100% / 5 - 15px);
+    width: calc(100% / 6 - 15px);
 }
 
 .product-page__item {
-    width: calc(100% / 4 - 15px);
+    width: calc(100% / 5 - 17px);
 }
-
-/* 
-.product-page__item:hover,
-.product-item:hover {
-    transform: translateY(-6px) scale(1.02);
-    box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.25);
-    border: 1px solid var(--secondary-color);
-} */
 
 .product-page__item img,
 .product-item img {
@@ -1112,7 +1107,7 @@ ul {
     background: #fff;
 }
 
-.table-heading__body.open {
+.table-heading__body.active {
     max-height: 500px;
 }
 
@@ -1369,10 +1364,48 @@ ul {
 
 /* css contact */
 .map-container {
-    width: 100%;
     aspect-ratio: 16 / 6;
-    margin: 20px 0px;
+    padding: 20px 0px;
     height: auto;
+    gap: 20px;
+}
+
+.map-branch{
+    flex: 0 0 30%;
+}
+
+.map-branch__title{
+    font-size: calc(var(--font-size-base) + 5px);
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.map-content {
+    flex: 1 1 70%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.branch-list {
+    gap: 10px;
+    max-height: fit-content;
+    overflow-y: scroll;
+}
+.branch.active {
+    background: #cce5ff;
+    border-left: 4px solid var(--primary-color);
+}
+
+.branch {
+    padding: 5px;
+    margin-bottom: 10px;
+    background: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-left: 4px solid transparent;
+    gap: 5px;
 }
 
 .des-contact {
@@ -1731,6 +1764,13 @@ footer {
     padding: 80px 0px;
 }
 
+.menu-shortcut__container {
+    position: sticky;
+    top: 134.25px;
+    z-index: 2;
+    width: 100vw;
+}
+
 .enterprise-value__content b,
 .enterprise-value__content p {
     font-weight: 600;
@@ -1798,8 +1838,8 @@ footer {
     font-size: var(--font-size-base);
 }
 
-.allproduct-type__item h3,
-.corevalues__item h3 {
+.allproduct-type__item b,
+.corevalues__item b {
     color: var(--primary-color);
 }
 
@@ -2175,6 +2215,14 @@ footer {
     flex-wrap: wrap;
 }
 
+.product-detail__contentMB .product-detail__btn {
+    background-color: var(--white-color);
+}
+
+.product-detail__contentMB {
+    display: none;
+}
+
 .product-detail__btn {
     padding: 5px 20px;
     gap: 10px;
@@ -2206,7 +2254,7 @@ footer {
 
 .btn-like.active,
 .btn-share.active {
-    color: #fff !important;
+    color: var(--white-color) !important;
     background-color: var(--primary-color) !important;
     border-color: var(--primary-color) !important;
 }
@@ -2234,11 +2282,17 @@ footer {
     padding-bottom: 10px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     justify-content: space-between;
+    gap: 10px;
 }
 
 .product-image>img {
-    aspect-ratio: 326 / 434.67;
-    max-width: 326px;
+    max-width: 85%;
+    aspect-ratio: 4 / 3;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: contain;
+    object-position: center;
     border-radius: 10px;
 }
 
@@ -2390,6 +2444,7 @@ footer {
     border-radius: 4px;
     cursor: pointer;
     opacity: 0.6;
+    max-height: 160px;
 }
 
 .gallery-slider-nav .slick-current img {
@@ -2424,7 +2479,7 @@ footer {
 }
 
 .btn-next {
-    right: 20px;
+    right: 0px;
 }
 
 .btn-prev {

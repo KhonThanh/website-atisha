@@ -254,7 +254,7 @@ if (menuButtonTable && menuTable) {
 document.addEventListener("DOMContentLoaded", () => {
   const menuButtonMobile = document.getElementById('menuMobileButton');
   const menuMobileList = document.querySelector('.menu-list__mobile');
-  const closeMenuButton = document.querySelector('.clone-menu__container'); // nút ⨉
+  const closeMenuButton = document.querySelector('.clone-menu__container'); 
 
   if (menuButtonMobile && menuMobileList) {
     // Toggle toàn bộ menu mobile

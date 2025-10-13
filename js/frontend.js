@@ -493,6 +493,23 @@ function generateHeadingLinks({
   }
 }
 
+// document.addEventListener("DOMContentLoaded", () => {
+//   const btnShare = document.querySelector(".btn-share");
+//   if (!btnShare) return;
+
+//   btnShare.addEventListener("click", () => {
+//     // Kiểm tra text trong nút
+//     const text = btnShare.textContent.trim().toLowerCase();
+
+//     if (text.includes("chia sẻ")) {
+//       const shareDrop = document.querySelector(".news__share__drop");
+//       if (shareDrop) {
+//         shareDrop.classList.toggle("active");
+//       }
+//     }
+//   });
+// });
+
 // ----------- Vùng gọi biến --------------
 document.addEventListener("DOMContentLoaded", () => {
   includeHTML(() => {
@@ -657,13 +674,27 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       },
       {
-        trigger: ".intro-slide__img img, .intro-slide__folderImage img", 
-        target: ".gallery-section",      
-        activeClass: "active",           
-        closeBtn: ".gallery-section .btn-close", 
-        closeOnOutside: true,            
-        overlayCloses: true,             
-        closeOnEsc: true,                 
+        trigger: ".btn-like",
+        behavior: "toggle", 
+        activeClass: "active",
+      },
+
+      {
+        trigger: ".btn-share",
+        target: ".news__share__drop",
+        activeClass: "active", 
+        closeBtn: ".news__share__close",
+        closeOnOutside: true,
+        closeOnEsc: true,
+      },
+      {
+        trigger: ".intro-slide__img img, .intro-slide__folderImage img",
+        target: ".gallery-section",
+        activeClass: "active",
+        closeBtn: ".gallery-section .btn-close",
+        closeOnOutside: true,
+        overlayCloses: true,
+        closeOnEsc: true,
       }
       // ... thêm config khác theo cùng mẫu ...
     ]);

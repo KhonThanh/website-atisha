@@ -319,6 +319,19 @@
     .product-page__item {
         width: calc(100% / 2 - 15px);
     }
+
+    .cta-floating {
+        right: 10px;
+        padding: 5px;
+        gap: 5px;
+    }
+
+    .cta-item img {
+        aspect-ratio: 1 / 1;
+        width: 100%;
+        height: auto;
+        max-width: 32px;
+    }
 }
 
 @media screen and (max-width: 551px) {
@@ -331,7 +344,7 @@
         aspect-ratio: 4 / 3;
     }
 
-    .branch-list{
+    .branch-list {
         max-height: 200px;
     }
 

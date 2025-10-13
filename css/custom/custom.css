@@ -1370,11 +1370,11 @@ ul {
     gap: 20px;
 }
 
-.map-branch{
+.map-branch {
     flex: 0 0 30%;
 }
 
-.map-branch__title{
+.map-branch__title {
     font-size: calc(var(--font-size-base) + 5px);
     font-weight: bold;
     color: var(--primary-color);
@@ -1392,6 +1392,7 @@ ul {
     max-height: fit-content;
     overflow-y: scroll;
 }
+
 .branch.active {
     background: #cce5ff;
     border-left: 4px solid var(--primary-color);
@@ -1757,6 +1758,27 @@ footer {
 .show-up {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* css CTA */
+.cta-floating {
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    z-index: 2;
+    background: var(--white-color);
+    border-radius: 50px;
+    border: 1px solid var(--primary-color);
+    padding: 10px;
+    gap: 10px;
+}
+
+.cta-item img{
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    height: auto;
+    max-width: 32px;
 }
 
 /* css intro */

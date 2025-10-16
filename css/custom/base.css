@@ -86,9 +86,36 @@ a {
 }
 
 *:not(input):not(textarea) {
-  caret-color: transparent;
+  caret-color: transparent !important;
+}
+
+input,
+textarea {
+  caret-color: auto;
 }
 
 p {
   line-height: 1.5;
+}
+
+input.error::placeholder {
+  color: red;
+  opacity: 1; 
+}
+
+input.error {
+  border-color: red !important;
+}
+
+select:focus-visible {
+  outline: none;
+}
+
+select.error {
+  border: 1px solid red;
+  position: relative;
+}
+
+select:not(.error) {
+  color: inherit;
 }

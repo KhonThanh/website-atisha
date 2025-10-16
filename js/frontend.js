@@ -493,22 +493,92 @@ function generateHeadingLinks({
   }
 }
 
-// document.addEventListener("DOMContentLoaded", () => {
-//   const btnShare = document.querySelector(".btn-share");
-//   if (!btnShare) return;
+// hàm kiểm tra input
+function validateInputs(selector) {
+  const inputs = document.querySelectorAll(selector);
 
-//   btnShare.addEventListener("click", () => {
-//     // Kiểm tra text trong nút
-//     const text = btnShare.textContent.trim().toLowerCase();
+  const validators = {
+    name: value =>
+      /^(?:[A-ZÀ-Ỹ][a-zà-ỹ]+(?:\s[A-ZÀ-Ỹ][a-zà-ỹ]+)*|[a-zà-ỹ]+(?:\s[a-zà-ỹ]+)*)$/.test(value),
+    phone: value =>
+      /^(?:0|(\+84))(32|33|34|35|36|37|38|39|96|97|98|86|81|82|83|84|85|88|91|94|70|76|77|78|79|89|90|93|56|58|92|99|59)\d{7}$/.test(
+        value.replace(/\s|-/g, "")
+      ),
+    email: value => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value),
+    select: value => value !== "default" && value !== "",
+    address: value => value.trim().length > 2,
+    content: value => value.trim().length > 0,
+  };
 
-//     if (text.includes("chia sẻ")) {
-//       const shareDrop = document.querySelector(".news__share__drop");
-//       if (shareDrop) {
-//         shareDrop.classList.toggle("active");
-//       }
-//     }
-//   });
-// });
+  const errorMessages = {
+    name: "Họ tên không hợp lệ",
+    phone: "Số điện thoại không hợp lệ",
+    email: "Email không hợp lệ",
+    select: "Vui lòng chọn",
+    address: "Địa chỉ không hợp lệ",
+    content: "Nội dung không được để trống",
+  };
+
+  const button = document.querySelector(".btn-register");
+  if (!button) {
+    console.warn("⚠️ Không tìm thấy nút .btn-register để gửi");
+    return;
+  }
+
+  button.addEventListener("click", e => {
+    e.preventDefault();
+    let valid = true;
+    let firstError = null;
+
+    inputs.forEach(input => {
+      const tag = input.tagName.toLowerCase();
+      let type = input.dataset?.type || input.getAttribute("type") || "text";
+      let value = input.value.trim();
+      if (tag === "select") type = "select";
+
+      if (!validators[type]) return;
+
+      if (!validators[type](value)) {
+        valid = false;
+        input.classList.add("error");
+
+        if (!input.dataset.oldPlaceholder) {
+          input.dataset.oldPlaceholder = input.placeholder;
+        }
+
+        input.value = "";
+        input.placeholder = errorMessages[type] || "Không hợp lệ";
+
+        if (!firstError) firstError = input;
+      } else {
+        input.classList.remove("error");
+        if (input.dataset.oldPlaceholder) {
+          input.placeholder = input.dataset.oldPlaceholder;
+        }
+      }
+    });
+
+    if (!valid) {
+      alert("⚠️ Vui lòng kiểm tra lại các thông tin bị lỗi!");
+      if (firstError) firstError.focus(); // 🔹 focus ô đầu tiên bị lỗi
+    } else {
+      // ✅ Không báo thành công — để tuỳ xử lý tiếp
+      console.log("✅ Form hợp lệ, có thể gửi đi.");
+    }
+  });
+
+  // 🔹 Realtime sửa lỗi
+  inputs.forEach(input => {
+    input.addEventListener("input", () => {
+      if (input.classList.contains("error")) {
+        input.classList.remove("error");
+        if (input.dataset.oldPlaceholder) {
+          input.placeholder = input.dataset.oldPlaceholder;
+        }
+      }
+    });
+  });
+}
 
 // ----------- Vùng gọi biến --------------
 document.addEventListener("DOMContentLoaded", () => {
@@ -675,14 +745,14 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       {
         trigger: ".btn-like",
-        behavior: "toggle", 
+        behavior: "toggle",
         activeClass: "active",
       },
 
       {
         trigger: ".btn-share",
         target: ".news__share__drop",
-        activeClass: "active", 
+        activeClass: "active",
         closeBtn: ".news__share__close",
         closeOnOutside: true,
         closeOnEsc: true,
@@ -696,8 +766,13 @@ document.addEventListener("DOMContentLoaded", () => {
         overlayCloses: true,
         closeOnEsc: true,
       }
-      // ... thêm config khác theo cùng mẫu ...
+
+
+
     ]);
+
+    // THỰC THI KIỂM TRA INPUT
+    validateInputs(".advise-intro input, .advise-intro select");
   });
 });
 

@@ -9,6 +9,11 @@
 .center-hor{justify-content: center;}
 .center-ver{align-items: center;}
 
+.pos-rel{ position: relative;}
+.pos-abs{ position: absolute;}
+.pos-fixed{ position: fixed;}
+.pos-stick{ position: sticky;}
+
 .uppercase { text-transform: uppercase; }
 .bold { font-weight: bold; }
 .italic { font-style: italic; }

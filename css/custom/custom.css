@@ -190,7 +190,7 @@
 }
 
 .drop-down {
-    position: relative;
+   
 }
 
 .menu-list {
@@ -209,7 +209,7 @@
 }
 
 .header-container {
-    position: relative;
+    
 }
 
 .menu-list__table {
@@ -292,7 +292,7 @@
 }
 
 .header-newsandknowledge__container {
-    position: relative;
+    
 }
 
 .header-newsandknowledge__content {
@@ -496,7 +496,6 @@
 
 /* css intro */
 .intro-banner {
-    position: relative;
     gap: 10px;
 }
 
@@ -641,7 +640,6 @@
 .knowledge-content {
     margin-top: 20px;
     gap: 20px;
-    flex-wrap: wrap;
 }
 
 .knowledge-item {
@@ -687,7 +685,6 @@
 
 .product-quality {
     gap: 30px;
-    flex-wrap: wrap;
 }
 
 .product-quality__item img {
@@ -1056,7 +1053,6 @@
 /* css product page */
 .product-page__container {
     gap: 20px;
-    flex-wrap: wrap;
 }
 
 .product-page__padding {
@@ -1146,7 +1142,6 @@ ul {
     overflow: hidden;
     width: fit-content;
     min-width: 300px;
-    /* position: relative; */
 }
 
 .table-heading__top img {
@@ -1497,7 +1492,6 @@ ul {
 
 .contact-info__container {
     gap: 30px;
-    flex-wrap: wrap;
     margin: 20px 0px;
 }
 
@@ -1573,7 +1567,6 @@ ul {
 }
 
 .review-filter {
-    flex-wrap: wrap;
     gap: 10px;
     margin-bottom: 20px;
     align-items: center;
@@ -1614,7 +1607,6 @@ ul {
     padding: 24px;
     width: 90%;
     max-width: 400px;
-    position: relative;
     left: 50%;
     top: 50%;
     height: fit-content;
@@ -1740,7 +1732,6 @@ ul {
 }
 
 .feedback-item {
-    position: relative;
     justify-content: right;
 }
 
@@ -1795,7 +1786,6 @@ footer {
 
 .footer-bottom {
     justify-content: space-between;
-    flex-wrap: wrap;
     gap: 30px;
 }
 
@@ -1820,7 +1810,6 @@ footer {
     height: auto;
     width: 100%;
     text-align: center;
-
 }
 
 /* css fade */
@@ -1909,7 +1898,6 @@ footer {
 .corevalues__container {
     margin: 20px 0px;
     gap: 20px;
-    flex-wrap: wrap;
 }
 
 .allproduct-type__item,
@@ -1966,7 +1954,6 @@ footer {
 }
 
 .blog-content {
-    position: relative;
 }
 
 .index-position {
@@ -1979,7 +1966,6 @@ footer {
 /* css tuyển dụng */
 .recruitment-container {
     gap: 30px;
-    position: relative;
 }
 
 .recruitment-menu {
@@ -2151,10 +2137,6 @@ footer {
     color: var(--white-color);
 }
 
-.recruitment-zone {
-    position: relative;
-}
-
 .job-expired {
     flex: 1 1 auto;
     gap: 20px;
@@ -2209,7 +2191,6 @@ footer {
 }
 
 .job-list {
-    flex-wrap: wrap;
     gap: 30px 20px;
 }
 
@@ -2266,7 +2247,6 @@ footer {
 }
 
 .job-content {
-    flex-wrap: wrap;
     gap: 20px;
 }
 
@@ -2310,8 +2290,6 @@ footer {
 .product-detail__function {
     margin: 30px 0px;
     gap: 10px;
-    position: relative;
-    flex-wrap: wrap;
     width: fit-content;
 }
 
@@ -2450,10 +2428,6 @@ footer {
 .all-combo,
 .product-container__combo {
     gap: 20px;
-}
-
-.all-combo {
-    flex-wrap: wrap;
 }
 
 .combo-item {

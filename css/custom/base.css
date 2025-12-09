@@ -58,7 +58,6 @@ section {
 
 header {
   z-index: 1;
-  position: sticky;
   top: 0px;
   left: 0px;
   background-color: var(--white-color);

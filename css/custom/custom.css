@@ -189,9 +189,7 @@
     justify-content: right;
 }
 
-.drop-down {
-   
-}
+.drop-down {}
 
 .menu-list {
     position: absolute;
@@ -208,9 +206,7 @@
     z-index: 99;
 }
 
-.header-container {
-    
-}
+.header-container {}
 
 .menu-list__table {
     position: absolute;
@@ -291,9 +287,7 @@
     background: var(--primary-color);
 }
 
-.header-newsandknowledge__container {
-    
-}
+.header-newsandknowledge__container {}
 
 .header-newsandknowledge__content {
     position: absolute;
@@ -848,7 +842,7 @@
 .news__share__close {
     width: fit-content;
     border: none;
-    background-color: transparent; 
+    background-color: transparent;
 }
 
 .news__share-buttons {
@@ -882,13 +876,13 @@
     padding: 5px;
 }
 
-.news-share__header{
+.news-share__header {
     width: 100%;
     justify-content: space-between;
     align-items: start;
 }
 
-.news__share__close{
+.news__share__close {
     height: 100%;
     width: auto;
     aspect-ratio: 1 / 1;
@@ -1827,7 +1821,6 @@ footer {
 
 /* css CTA */
 .cta-floating {
-    position: fixed;
     top: 50%;
     right: 20px;
     transform: translateY(-50%);
@@ -1852,7 +1845,6 @@ footer {
 }
 
 .menu-shortcut__container {
-    position: sticky;
     top: 134.25px;
     z-index: 2;
     width: 100vw;
@@ -1953,12 +1945,10 @@ footer {
     margin-bottom: 10px;
 }
 
-.blog-content {
-}
+.blog-content {}
 
 .index-position {
     position: -webkit-sticky;
-    position: sticky;
     top: 136px;
     width: 100%;
 }
@@ -1971,7 +1961,6 @@ footer {
 .recruitment-menu {
     width: 35%;
     top: 130px;
-    position: sticky;
     height: fit-content;
 }
 
@@ -2005,7 +1994,7 @@ footer {
     border: 2px dashed #888;
     padding: 20px;
     width: 100%;
-    .recruitment-form__popup text-align: center;
+    text-align: center;
     cursor: pointer;
 }
 

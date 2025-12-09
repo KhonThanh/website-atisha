@@ -15,15 +15,41 @@
 
 <body>
     <div class=" center-hor bg-white menu-mobile__container" data-include="./component/menumobile.html"> </div>
-    <header class="container-f pos-stick" data-include="./component/header.html"></header>
+    <header class="container-f">
+        <div class="container-l landingpage-header__container">
+            <img src="./img/landingpage/logo-landingpage.webp" alt="">
+        </div>
+    </header>
     <main class="container-f flex flex-col center-hor">
-        <section class="container-f">
-            <div class="container-l"></div>
+        <section class="container-f landingpage-padding landingpage-banner__container">
+            <div class="container-l landingpage-banner__content flex flex-col">
+                <div class="flex landingpage-product__container">
+                    <div class="flex flex-col landingpage-product__intro">
+                        <p>Với Jan’s Atisha, tạo ra một sản phẩm thật sự tốt quan trọng hơn cả những lời quảng cáo trơn
+                            tru.</p>
+                        <p><b>MẬT CHUỐI HIGHLAND</b> là sự kết tinh từ chuối Laba chín tự nhiên, không đường – không phụ gia –
+                            không chất bảo quản.</p>
+                        <p>9kg chuối → 1 lít mật </p>
+                    </div>
+                    <div class="landingpage-product__img">
+                        <img src="./img/landingpage/Asset 2.webp" alt="">
+                    </div>
+                </div>
+                <div class="flex center-hor flex-wrap landingpage-product__quality">
+                    <p class="flex "><img src="./img/landingpage/icon1.webp" alt="">tự nhiên</p>
+                    <p class="flex "><img src="./img/landingpage/icon2.webp" alt="">truyền thống</p>
+                    <p class="flex "><img src="./img/landingpage/icon3.webp" alt="">tốt sức khỏe</p>
+                </div>
+                <div class="flex center-hor flex-wrap landingpage-connect__container">
+                    <a href="#">Mua ngay</a>
+                    <a href="#">đăng ký đại lý</a>
+                </div>
+            </div>
         </section>
-        <section class="container-l landingpage-applicability__container flex flex-col center-ver">
+        <section class="container-l landingpage-padding landingpage-applicability__container flex flex-col center-ver">
             <h2 class="landingpage__title">ứng dụng</h2>
             <div class="landingpage-applicability__content flex">
-                <div class="applicability-content__item ">
+                <div class="applicability-content__item flex flex-col center-ver">
                     <h3>Nấu ăn</h3>
                     <ul>
                         <li>Thay đường trong nấu ăn & pha chế</li>
@@ -32,8 +58,8 @@
                         <li>Làm bánh & tráng miệng</li>
                     </ul>
                 </div>
-                <div class="applicability-content__item">
-                    <h3></h3>
+                <div class="applicability-content__item flex flex-col center-ver">
+                    <h3>thức uốn</h3>
                     <ul>
                         <li>Pha nước uống hằng ngày</li>
                         <li>Kết hợp với Kombucha nước trái cây lên men</li>
@@ -42,10 +68,10 @@
                 </div>
             </div>
         </section>
-        <section class="container-f bg-gray flex flex-col center-ver">
+        <section class="container-f landingpage-padding bg-gray flex flex-col center-ver">
             <h2 class="landingpage__title">dinh dưỡng của chuối</h2>
             <div class="container-l flex landingpage-nutrition__container">
-                <div class="landingpage-nutrition__item">
+                <div class="landingpage-nutrition__item flex flex-col">
                     <p>Năng lượng: 105 kcal</p>
                     <p>Protein: 1.29g</p>
                     <p>Chất xơ: 3.1 g</p>
@@ -68,19 +94,25 @@
                 </div>
             </div>
         </section>
-        <section class="container-l landingpage-productuses__container flex flex-col center-ver">
+        <section class="container-l landingpage-padding  flex flex-col center-ver">
             <h2 class="landingpage__title">Công dụng</h2>
             <img src="./img/landingpage/map.webp" alt="">
         </section>
-        <section class="container-l landingpage-productuses__container pos-rel flex-col flex center-ver">
+        <section
+            class="container-l landingpage-padding landingpage-productuses__container pos-rel flex-col flex center-ver">
             <h2 class="landingpage__title">CÂU CHUYỆN SẢN PHẨM <br>
                 “GIỌT MẬT TỪ TRÁI CHUỐI”</h2>
+            <p>Jan’s tin rằng: “Thứ nuôi dưỡng cơ thể tốt nhất phải là thứ đến từ thiên nhiên.”
+                Chuối Laba – loại chuối đặc sản Lâm Đồng, giàu khoáng chất, vị ngọt tự nhiên và hàm lượng dinh dưỡng cao
+                – được chọn làm nguyên liệu chính.</p>
             <img src="./img/landingpage/map2.webp" alt="">
             <img class="pos-abs" src="./img/landingpage/icon-leaf.webp" alt="">
         </section>
-        <section class="container-l bg-gray flex flex-col center-ver ">
-            <h2 class="landingpage__title">BẢNG THÀNH PHẦN DINH DƯỠNG (100ml)</h2>
-            <img src="./img/landingpage/list-ingredient.webp" alt="">
+        <section class="container-f bg-gray flex flex-col center-ver ">
+            <div class="flex  landingpage-padding flex-col center-ver container-l">
+                <h2 class="landingpage__title">BẢNG THÀNH PHẦN DINH DƯỠNG (100ml)</h2>
+                <img src="./img/landingpage/list-ingredient.webp" alt="">
+            </div>
         </section>
         <section class="container-l landingpage-productionprocess__container">
             <img src="./img/landingpage/procedure.webp" alt="">

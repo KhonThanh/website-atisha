@@ -2552,3 +2552,148 @@ footer {
 .btn-readmore__new {
     margin-top: 20px;
 }
+
+/* css landingpage */
+.landingpage-padding {
+    padding: 60px 0px;
+    gap: 30px;
+}
+
+.applicability-content__item h3,
+.landingpage__title {
+    text-transform: uppercase;
+}
+
+.applicability-content__item:first-child {
+    border-right: 2px solid var(--landingpage-color);
+}
+
+.landingpage-productuses__container p {
+    text-align: center;
+}
+
+.landingpage-productuses__container img.pos-abs {
+    right: 0px;
+    top: -57px;
+    width: 10vw;
+    height: auto;
+}
+
+.landingpage-header__container img {
+    max-width: 200px;
+}
+
+.landingpage-productuses__container p,
+.landingpage-nutrition__item,
+.applicability-content__item h3,
+.applicability-content__item ul li,
+.landingpage__title {
+    color: var(--landingpage-color);
+}
+
+.landingpage__title {
+    font-size: calc(var(--font-size-base) * 2);
+}
+
+.landingpage-productuses__container p,
+.landingpage-nutrition__item p,
+.landingpage-nutrition__item ul li {
+    font-size: calc(var(--font-size-base) + 10px);
+}
+
+.applicability-content__item h3 {
+    font-size: calc(var(--font-size-base) + 4px);
+}
+
+.landingpage-applicability__content {
+    width: 100%;
+}
+
+.landingpage-nutrition__item {
+    justify-content: center;
+}
+
+.landingpage-nutrition__image,
+.landingpage-nutrition__item,
+.applicability-content__item {
+    flex: 1 1 50%;
+}
+
+.landingpage-nutrition__item {
+    gap: 10px;
+}
+
+.landingpage-nutrition__image,
+.applicability-content__item {
+    gap: 20px;
+}
+
+.applicability-content__item {
+    padding: 0px 10px;
+}
+
+.landingpage-banner__container {
+    background-image: url(../../img/landingpage/background.webp);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.landingpage-banner__content {
+    gap: 20px;
+}
+
+.landingpage-product__container {
+    gap: 30px;
+}
+
+.landingpage-product__intro {
+    gap: 20px;
+    justify-content: end;
+    margin-bottom: 30px;
+}
+
+.landingpage-product__intro p:last-child{
+    color: var(--white-color);
+    font-size: calc(var(--font-size-base) * 3);
+}
+
+.landingpage-product__intro p{
+    font-size: calc(var(--font-size-base) * 2) ;
+}
+
+.landingpage-product__img {
+    flex: 0 0 30%;
+}
+
+.landingpage-product__quality{
+    gap: 20px;
+}
+
+.landingpage-product__quality p{
+    background-color: rgba(40, 112, 82, 0.8);
+    border-radius: 20px;
+    padding: 10px;
+    gap: 10px;
+    color: var(--white-color);
+    text-transform: uppercase;
+    align-items: center;
+    min-width: 200px;
+}
+
+.landingpage-product__quality p img{
+    max-width: 30px;
+}
+
+.landingpage-connect__container{
+    gap: 20px;
+}
+
+.landingpage-connect__container a{
+    border-radius: 50px;
+    color: var(--black-color);
+    background-color: var(--landingpage-yellow-color);
+    padding: 10px 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
